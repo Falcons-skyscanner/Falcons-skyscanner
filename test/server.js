@@ -1,5 +1,6 @@
 const express = require("express");
 const bodyParser= require('body-parser');
+let serverConnct= require("./serverConnect");
 
 let app = express();
 
@@ -11,7 +12,13 @@ app.get("/", (req,res)=>{
     res.sendFile(__dirname +"/index.html");
 });
 app.post("/userInfo", function(req,res){
-    console.log(req.body)
+    console.log(req.body);
+    
+    userCollection.insertOne(req.body)
+    .then(result => {
+        console.log(result);
+    })
+    .catch(error => console.log(error));
 });
 
 app.listen(3000, function(){
