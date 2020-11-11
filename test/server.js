@@ -1,14 +1,19 @@
 const express = require("express");
-bodyParser= require('body-parser');
+const bodyParser= require('body-parser');
+const MongoClient= require("mongodb").MongoClient;
 let app = express();
+
+//make sure that body parser work befor CRUD building
+app.use(bodyParser.urlencoded({extended:true}));
+
+
+app.get("/", (req,res)=>{
+    res.sendFile(__dirname +"/index.html");
+});
+app.post("/userInfo", function(req,res){
+    console.log(req.body)
+});
 
 app.listen(3000, function(){
     console.log("Server  Started lestning on 3000");
 });
-
-app.get("/", (req,res)=>{
-    res.sendFile(__dirname +"/index.html");
-})
-app.post("/userInfo", function(req,res){
-    console.log("Hello RBK")
-})
