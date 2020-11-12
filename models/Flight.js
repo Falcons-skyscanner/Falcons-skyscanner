@@ -1,31 +1,27 @@
 const mongoose = require('mongoose')
-const postSchema = mongoose.Schema({
+const ticketSchema = mongoose.Schema({
 flightNo: {
-    required:'required', type: 'string'
+    required:true, type: String
   },
   departureTime: {
-    required:'required', type: 'string'
+    required:true, type: String
   },
   arrivalTime: {
-    required:'required', type: 'string'
+    required:true, type: String
   },
   departureAirport: {
-    required:'required', type: 'string'
+    required:true, type: String
   },
   destinationAirport: {
-    required:'required', type: 'string'
+    required:true, type: String
   },
   price: {
-    required:'required', type: 'string'
+    required:true, type: String
   },
   typeOfFlight: {
-    required:'required', type: 'array'
+    required:true, type: String
   },
-  creditCard: {
-    required:'required', type: 'objectId'
-  },
-  users: {
-    required:'required', type: 'objectId'
-  }
+  creditCard:  {        type : mongoose.Schema.Types.ObjectId,        ref: 'Credit'    },
+  users:  {        type : mongoose.Schema.Types.ObjectId,        ref: 'User'    }
 }, {timestamps: true})
-const Post = mongoose.model('Post', postSchema);
+const Ticket = mongoose.model('Ticket', ticketSchema);

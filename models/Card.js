@@ -3,24 +3,22 @@ const mongoose = require('mongoose')
 
 //Scheema
 
-const postSchema = mongoose.Schema({
+const creditSchema = mongoose.Schema({
 
     cardNo: {
-        required:'required', type: 'string'
+        required:true, type:String, unique: true
       },
       cvv: {
-        required:'required', type: 'string'
+        required:true, type:String
       },
       expiryDate: {
-        required:'required', type: 'string'
+        required:true, type:String
       },
-      users: {
-        required:'required', type: 'objectId'
-      }
+      users:  {        type : mongoose.Schema.Types.ObjectId,        ref: 'User'    }
 
 }, {timestamps: true})
 
 
-const Post = mongoose.model('Post', postSchema);
+const Credit = mongoose.model('Credit', creditSchema);
 
 

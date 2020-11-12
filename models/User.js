@@ -3,21 +3,21 @@ const mongoose = require('mongoose')
 
 //Scheema
 
-const postSchema = mongoose.Schema({
+const userSchema = mongoose.Schema({
 
-    userid :{type:'Number', required:'required'},
-    name :{type:'String', required:'required'},
-    email :{type:'String', required:'required'},
-    password :{type:'String', required:'required'},
-    token :{type:'String', required:'required'},
-    dateCreated :{type:'String', required:'required'},
-    mobile :{type:'Number', required:'required'},
-    address :{type:'String', required:'required'},
-    note :{type:'String', required:'required'}
+    userid :{type:Number, required:true},
+    name :{type:String, required:true},
+    email :{type:String, required:true, unique: true},
+    password :{type:String, required:true},
+    token :{type:String, required:true},
+    dateCreated :{type:String, required:true},
+    mobile :{type:Number, required:true, unique: true},
+    address :{type:String, required:true},
+    note :{type:String, required:true}
 
 }, {timestamps: true})
 
 
-const Post = mongoose.model('Post', postSchema);
+const User = mongoose.model('User', userSchema);
 
 
