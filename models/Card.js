@@ -3,8 +3,22 @@ const mongoose = require('mongoose')
 
 //Scheema
 
+const creditSchema = mongoose.Schema({
 
-//Create the model according to Scheema
+    cardNo: {
+        required:true, type:String, unique: true
+      },
+      cvv: {
+        required:true, type:String
+      },
+      expiryDate: {
+        required:true, type:String
+      },
+      userID:  {        type : mongoose.Schema.Types.ObjectId,        ref: 'User'    }
+
+}, {timestamps: true})
 
 
-//exporting the model to use mongoose functions 
+const Credit = mongoose.model('Credit', creditSchema);
+
+

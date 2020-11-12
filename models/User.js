@@ -3,8 +3,20 @@ const mongoose = require('mongoose')
 
 //Scheema
 
+const userSchema = mongoose.Schema({
 
-//Create the model according to Scheema
+    name :{type:String, required:true},
+    email :{type:String, required:true, unique: true},
+    password :{type:String, required:true},
+    token :{type:String, required:true},
+    dateCreated :{type:String, required:true},
+    mobile :{type:Number, required:true, unique: true},
+    address :{type:String, required:true},
+    note :{type:String, required:true}
+
+}, {timestamps: true})
 
 
-//exporting the model to use mongoose functions 
+const User = mongoose.model('User', userSchema);
+
+
