@@ -14,7 +14,7 @@ const creditSchema = mongoose.Schema({
       expiryDate: {
         required:true, type:String
       },
-      users:  {        type : mongoose.Schema.Types.ObjectId,        ref: 'User'    }
+      userID:  {        type : mongoose.Schema.Types.ObjectId,        ref: 'User'    }
 
 }, {timestamps: true})
 
