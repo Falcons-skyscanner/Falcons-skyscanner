@@ -3,8 +3,21 @@ const mongoose = require('mongoose')
 
 //Scheema
 
+const postSchema = mongoose.Schema({
 
-//Create the model according to Scheema
+    userid :{type:'Number', required:'required'},
+    name :{type:'String', required:'required'},
+    email :{type:'String', required:'required'},
+    password :{type:'String', required:'required'},
+    token :{type:'String', required:'required'},
+    dateCreated :{type:'String', required:'required'},
+    mobile :{type:'Number', required:'required'},
+    address :{type:'String', required:'required'},
+    note :{type:'String', required:'required'}
+
+}, {timestamps: true})
 
 
-//exporting the model to use mongoose functions 
+const Post = mongoose.model('Post', postSchema);
+
+

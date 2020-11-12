@@ -3,8 +3,24 @@ const mongoose = require('mongoose')
 
 //Scheema
 
+const postSchema = mongoose.Schema({
 
-//Create the model according to Scheema
+    cardNo: {
+        required:'required', type: 'string'
+      },
+      cvv: {
+        required:'required', type: 'string'
+      },
+      expiryDate: {
+        required:'required', type: 'string'
+      },
+      users: {
+        required:'required', type: 'objectId'
+      }
+
+}, {timestamps: true})
 
 
-//exporting the model to use mongoose functions 
+const Post = mongoose.model('Post', postSchema);
+
+

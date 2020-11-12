@@ -14,7 +14,7 @@ app.get("/", (req,res)=>{
 app.post("/userInfo", function(req,res){
     console.log(req.body);
     
-    userCollection.insertOne(req.body)
+    serverConnct.userCollection.insertOne(req.body)
     .then(result => {
         console.log(result);
     })
