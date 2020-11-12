@@ -21,7 +21,7 @@ flightNo: {
   typeOfFlight: {
     required:true, type: String
   },
-  creditCard:  {        type : mongoose.Schema.Types.ObjectId,        ref: 'Credit'    },
-  users:  {        type : mongoose.Schema.Types.ObjectId,        ref: 'User'    }
+  creditCardID:  {        type : mongoose.Schema.Types.ObjectId,        ref: 'Credit'    },
+  userID:  {        type : mongoose.Schema.Types.ObjectId,        ref: 'User'    }
 }, {timestamps: true})
 const Ticket = mongoose.model('Ticket', ticketSchema);
