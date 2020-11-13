@@ -9,7 +9,6 @@ const userSchema = mongoose.Schema({
     email :{type:String, required:true, unique: true},
     password :{type:String, required:true},
     token :{type:String, required:true},
-    dateCreated :{type:String, required:true},
     mobile :{type:Number, required:true, unique: true},
     address :{type:String, required:true},
     note :{type:String, required:true}
