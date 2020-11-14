@@ -25,6 +25,7 @@ const creditSchema = mongoose.Schema({
 }, { timestamps: true })
 
 //Create the model according to Scheema
-
+const Credit = mongoose.model('Credit', creditSchema)
 
 //exporting the model to use mongoose functions 
+module.exports = Credit
