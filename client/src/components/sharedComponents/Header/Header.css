@@ -1,0 +1,29 @@
+.Header{
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    background-color: gainsboro;
+}
+
+.Header__logo{
+    width: 100px;
+    object-fit: contain;
+}
+
+.login{
+    display: flex;
+    flex-direction: column;
+}
+
+.Dialog__image{
+    width: 100%;
+    object-fit: contain;
+}
+
+.login_button{
+    margin-top: 15px !important;
+}
+
+.Input{
+    margin-top: 15px !important;
+}
