@@ -4,6 +4,7 @@ const User = require('../models/User')
 const auth = async(req, res, next) => {
     try {
         const token = req.header('auth-sky')
+        console.log(token)
         if (token) {
             const decoded = await jwt.verify(token, 'secret')
             // console.log(userId)
