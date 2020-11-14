@@ -20,11 +20,10 @@ const userSchema = mongoose.Schema({
         type: String
     },
     mobile: {
-        type: Number,
-        unique: true
+        type: Number
     },
     address: {
-        type: String,
+        type: String
     }
 
 }, { timestamps: true })
