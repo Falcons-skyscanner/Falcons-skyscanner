@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import SearchComponent from './components/Pages/Home/SearchComponent';
-import Header from './components/SharedComponents/Header/Header'
+import HomePage from './components/Pages/Home/index';
+import Header from './components/sharedComponents/Header/Header'
 import SearchPage from './components/Pages/Search/index'
 
 import { Switch, Route, Redirect } from 'react-router-dom';
@@ -38,8 +38,8 @@ class App extends React.Component {
       <div className="App">
         <Header currentUser={this.state.currentUser} />
         <Switch>
-          <Route exact path='/' component={SearchComponent} />
-          <Route exact path='/search' component={SearchPage} />
+          <Route exact path='/' component={HomePage} />
+          <Route path='/search' component={SearchPage} />
         </Switch>
         
       </div>

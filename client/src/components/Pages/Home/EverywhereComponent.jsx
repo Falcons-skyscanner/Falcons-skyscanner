@@ -5,7 +5,7 @@ import './Home.css'
 const EveryWhere = () => (
     <div className='container'>
         <div >
-
+            <h1> Am the second component</h1>
         </div>
 
         <div>

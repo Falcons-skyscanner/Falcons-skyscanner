@@ -14,7 +14,7 @@ class Header extends React.Component {
 
     logOut = () => {
         localStorage.removeItem('auth-sky')
-        window.location.reload(false)
+        window.location.reload()
     }
 
 
@@ -25,7 +25,7 @@ class Header extends React.Component {
                 {
                     this.props.currentUser ? 
                         <Button type='submit' variant="outlined" color="primary" className='login_button' onClick={this.logOut}> LogOut </Button>
-                    
+                        
                         :
                         <MaxWidthDialog />
                 }

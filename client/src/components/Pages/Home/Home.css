@@ -44,13 +44,15 @@
 }
 
 
-.search__form{
-    position: relative;
-    top : 300px;
-    z-index: 1;
+.searchBox{
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    background-color: aquamarine;
-    padding: 40px;
-    justify-content: space-around;
+    padding: 30px;
+    background-color: grey;
+    position: relative;
+    top : -300px;
+    width: 75%;
+    margin-left: 11%;
+    opacity: 0.95;
 }
