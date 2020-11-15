@@ -46,8 +46,10 @@ class Asynchronous extends React.Component {
                     onClose={() => {
                         this.setState({ open: false });
                     }}
-                    getOptionSelected={(option, value) => option.PlaceName === value.PlaceName}
-                    getOptionLabel={(option) => option.PlaceName}
+                    // getOptionSelected={(option, value) => option.PlaceName === value.PlaceName}
+                    getOptionLabel={(option) =>
+                        (option.PlaceId?`${option.PlaceName} ✈️ (${option.PlaceId})`:"")
+                    }
                     options={this.state.options}
                     renderInput={(params) => (
                         <TextField
