@@ -21,7 +21,7 @@ class Asynchronous extends React.Component {
         this.setState({ options: countries.map((country, i) => country) });
     }
 
-    onChange1 = async (ev, value) => {
+    onSelect = async (ev, value) => {
         if (value) {
             await this.setState({ placeId: value.PlaceId })
             console.log(this.state.placeId)
@@ -37,7 +37,7 @@ class Asynchronous extends React.Component {
         return (
             <div style={{ width: 300, paddingLeft: "8px", marginTop: "8px" }}>
                 <Autocomplete
-                    onChange={this.onChange1}
+                    onChange={this.onSelect}
                     id="asynchronous-demo"
                     open={this.state.open}
                     onOpen={() => {
