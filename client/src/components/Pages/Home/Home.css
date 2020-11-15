@@ -49,11 +49,11 @@
     justify-content: space-between;
     align-items: center;
     padding: 30px;
-    background-color: grey;
+    background-color:whitesmoke ;
     position: relative;
     top : -300px;
     width: 75%;
     margin-left: 11%;
-    opacity: 0.95;
+    opacity: 0.9;
     border-radius: 50px;
 }
