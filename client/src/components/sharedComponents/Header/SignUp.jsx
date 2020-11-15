@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button,Input } from '@material-ui/core'
+import { Button, Input } from '@material-ui/core'
 
 class SignUp extends React.Component {
     constructor(props) {
@@ -28,7 +28,17 @@ class SignUp extends React.Component {
         };
         fetch('http://localhost:5000/api/users/signup', requestOptions)
             .then(response => response.json())
-            .then(data => console.log(data))
+            .then(data => {
+                console.log(data)
+                if (data.success) {
+                    localStorage.setItem('auth-sky', data.token)
+                    window.location.reload(false)
+                }
+            })
+    }
+
+    signUp = () => {
+        this.postReq(this.state)
     }
 
 
@@ -36,7 +46,7 @@ class SignUp extends React.Component {
 
     render() {
 
-        const { name , email , password } = this.state
+        const { name, email, password } = this.state
         return (
 
             <div className='login'>
@@ -64,7 +74,7 @@ class SignUp extends React.Component {
                     onChange={this.handleChange}
                 />
 
-                <Button type='submit' className='login_button' onClick={this.props.signUpStatus} > Sign Up </Button>
+                <Button type='submit' className='login_button' onClick={this.signUp} > Sign Up </Button>
             </div>
 
         )

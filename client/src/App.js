@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import SearchComponent from './components/Pages/Home/SearchComponent';
-import Header from './components/sharedComponents/Header/Header'
+import Header from './components/SharedComponents/Header/Header'
 
 
 class App extends React.Component {
