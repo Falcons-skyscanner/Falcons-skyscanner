@@ -18,10 +18,10 @@ class OpenSelect extends React.Component {
 
 
         return (
-            <ButtonGroup size="small" aria-label="small outlined button group">
-                <Button onClick={this.handleIncrement}>+</Button>
-                <Button >{this.state.counter}</Button>
+            <ButtonGroup size="small" aria-label="small outlined button group" style={{paddingLeft:"8px"}}>
                 <Button onClick={this.handleDecrement}>-</Button>
+                <Button >{this.state.counter}</Button>
+                <Button onClick={this.handleIncrement}>+</Button>
             </ButtonGroup>
         );
     }
