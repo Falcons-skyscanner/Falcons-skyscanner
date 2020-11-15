@@ -7,14 +7,10 @@ import './Home.css'
 
 
 const SearchComponent = () => {
-    return(
+    return (
         <div className='search'>
-            <div className='search__form'>
-                <Asynchronous />
-                <Asynchronous />
-            </div>
-            
-            <SimpleSlider/>
+
+            <SimpleSlider />
         </div>
     )
 }

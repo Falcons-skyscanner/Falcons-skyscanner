@@ -2,6 +2,9 @@ import React from 'react';
 import './App.css';
 import SearchComponent from './components/Pages/Home/SearchComponent';
 import Header from './components/SharedComponents/Header/Header'
+import SearchPage from './components/Pages/Search/index'
+
+import { Switch, Route, Redirect } from 'react-router-dom';
 
 
 class App extends React.Component {
@@ -34,7 +37,11 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header currentUser={this.state.currentUser} />
-        <SearchComponent />
+        <Switch>
+          <Route exact path='/' component={SearchComponent} />
+          <Route exact path='/search' component={SearchPage} />
+        </Switch>
+        
       </div>
     )
   }

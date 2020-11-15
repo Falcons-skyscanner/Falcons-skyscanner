@@ -1,12 +1,13 @@
 .Header{
-    padding: 20px;
+    padding: .6rem;
     display: flex;
     justify-content: space-between;
     background-color: gainsboro;
+    align-items: center;
 }
 
 .Header__logo{
-    width: 100px;
+    width: 6rem;
     object-fit: contain;
 }
 
@@ -16,14 +17,19 @@
 }
 
 .Dialog__image{
-    width: 100%;
+    width: 60%;
     object-fit: contain;
 }
 
 .login_button{
-    margin-top: 15px !important;
+    text-transform: none !important;
 }
 
-.Input{
-    margin-top: 15px !important;
+.dialog_button{
+    margin-top: 1rem !important;
+}
+
+.Dialog{
+    display: flex;
+    justify-content: center;
 }

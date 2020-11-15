@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Input } from '@material-ui/core'
+import { Button, TextField  } from '@material-ui/core'
 
 class SignUp extends React.Component {
     constructor(props) {
@@ -32,7 +32,7 @@ class SignUp extends React.Component {
                 console.log(data)
                 if (data.success) {
                     localStorage.setItem('auth-sky', data.token)
-                    window.location.reload(false)
+                    window.location.reload()
                 }
             })
     }
@@ -50,31 +50,31 @@ class SignUp extends React.Component {
         return (
 
             <div className='login'>
-                <Input className='Input'
-                    placeholder='username ..'
+                <TextField className='Input'
+                    label='Username'
                     type='text'
                     name='name'
                     value={name}
                     onChange={this.handleChange}
                 />
                 <br />
-                <Input className='Input'
-                    placeholder='email ..'
+                <TextField className='Input'
+                    label='Email'
                     type='email'
                     name='email'
                     value={email}
                     onChange={this.handleChange}
                 />
                 <br />
-                <Input className='Input'
-                    placeholder='password ..'
+                <TextField className='Input'
+                    label='Password'
                     type='password'
                     name='password'
                     value={password}
                     onChange={this.handleChange}
                 />
 
-                <Button type='submit' className='login_button' onClick={this.signUp} > Sign Up </Button>
+                <Button type='submit' className='dialog_button' onClick={this.signUp} > Sign Up </Button>
             </div>
 
         )
