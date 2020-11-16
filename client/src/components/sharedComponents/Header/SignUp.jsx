@@ -32,6 +32,7 @@ class SignUp extends React.Component {
                 console.log(data)
                 if (data.success) {
                     localStorage.setItem('auth-sky', data.token)
+                    localStorage.setItem('userId', data.userId)
                     window.location.reload()
                 }
             })
