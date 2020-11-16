@@ -1,7 +1,7 @@
 import React from 'react'
 
-const SearchPage = ({flightsData}) => {
-    console.log(flightsData)
+const TicketComponent = () => {
+    // console.log(flightsData)
     return(
         <div>
             <h1> Search Page</h1>
@@ -11,4 +11,4 @@ const SearchPage = ({flightsData}) => {
 }
 
 
-export default SearchPage
+export default TicketComponent
