@@ -35,7 +35,7 @@ class SearchComponent extends React.Component {
     }
 
     postReq = (obj) => {
-        fetch(`https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsequotes/v1.0/US/USD/en-US/${obj.originplace}/${obj.destinationplace}/${obj.outboundpartialdate}?inboundpartialdate=${obj.inboundpartialdate}`, {
+        fetch(`https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browseroutes/v1.0/US/USD/en-US/${obj.originplace}/${obj.destinationplace}/${obj.outboundpartialdate}/${obj.inboundpartialdate}`, {
             "method": "GET",
             "headers": {
                 "x-rapidapi-key": "df421e16a0msh56c7f5a0b77c14bp1128c1jsn3a5e2f818ea5",
@@ -65,7 +65,7 @@ class SearchComponent extends React.Component {
                     <DatePicker bound="Depart" setOutDate={this.setOutDate} />
                     <DatePicker bound="Return" setInDate={this.setInDate} />
                     <OpenSelect />
-                    <Link to="/search">
+                    <Link to="/search" style={{textDecoration:"none"}}>
                         <Button onClick={() => this.postReq(this.state)} style={{ marginLeft: "8px" }} color="secondary" variant="contained" size="large">search</Button>
                     </Link>
                 </div>
