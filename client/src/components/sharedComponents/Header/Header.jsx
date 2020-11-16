@@ -1,5 +1,6 @@
 import React from 'react'
 import { Button } from '@material-ui/core'
+import { Link } from 'react-router-dom'
 import MaxWidthDialog from './MaxWidthDialog'
 
 import './Header.css'
@@ -21,7 +22,9 @@ class Header extends React.Component {
     render() {
         return (
             <div className='Header'>
+                <Link to="/" style={{textDecoration:"none"}}>
                 <img className='Header__logo' src='https://i.pinimg.com/originals/0d/73/bb/0d73bb04a062426053e4b712e3df21e6.png' alt='logo' />
+                </Link>
                 {
                     this.props.currentUser ? 
                         <Button type='submit' variant="outlined" color="primary" className='login_button' onClick={this.logOut}> LogOut </Button>

@@ -1,5 +1,6 @@
 import React from 'react'
 import TicketComponent from './TicketComponent'
+import SearchComponent from '../../Pages/Home/SearchComponent'
 
 import './Search.css'
 
@@ -9,6 +10,7 @@ const SearchPage = ({flightsData}) => {
     const Places = flightsData.Places
     return(
         <div className='searchpage'>
+            {/* <SearchComponent/> */}
             {/* <h1> Search Page</h1> */}
             {
                 flightsData.Quotes?
