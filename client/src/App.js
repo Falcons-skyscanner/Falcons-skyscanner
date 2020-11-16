@@ -12,6 +12,7 @@ class App extends React.Component {
     super()
     this.state = {
       currentUser: '',
+      flightsData : []
     }
   }
 
@@ -32,14 +33,21 @@ class App extends React.Component {
       })
   }
 
+  getFlightsData = (data) => {
+    this.setState({ flightsData:data })
+  }
+
+
+
 
   render() {
+    const { currentUser,flightsData } = this.state
     return (
       <div className="App">
-        <Header currentUser={this.state.currentUser} />
+        <Header currentUser={currentUser} />
         <Switch>
-          <Route exact path='/' component={HomePage} />
-          <Route path='/search' component={SearchPage} />
+          <Route exact path='/' render={() => <HomePage getFlightsData={this.getFlightsData} />} />
+          <Route path='/search' render={() => <SearchPage flightsData={flightsData} />} />
         </Switch>
         
       </div>

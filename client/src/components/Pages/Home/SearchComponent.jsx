@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import OpenSelect from '../../sharedComponents/Material-UI/OpenSelect'
 import DatePicker from '../../sharedComponents/Material-UI/DatePicker'
 import Asynchronous from '../../sharedComponents/Material-UI/autoComplete'
@@ -8,8 +9,8 @@ import './Home.css'
 
 
 class SearchComponent extends React.Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
             originplace: "",
             destinationplace: "",
@@ -44,7 +45,8 @@ class SearchComponent extends React.Component {
             .then(response => response.json()
             )
             .then((data) => {
-                console.log(data)
+                // console.log(data)
+                this.props.getFlightsData(data)
             })
             .catch(err => {
                 console.error(err);
@@ -63,7 +65,9 @@ class SearchComponent extends React.Component {
                     <DatePicker bound="Depart" setOutDate={this.setOutDate} />
                     <DatePicker bound="Return" setInDate={this.setInDate} />
                     <OpenSelect />
-                    <Button onClick={() => this.postReq(this.state)} style={{ marginLeft: "8px" }} variant="contained" size="large">search</Button>
+                    <Link to="/search">
+                        <Button onClick={() => this.postReq(this.state)} style={{ marginLeft: "8px" }} color="secondary" variant="contained" size="large">search</Button>
+                    </Link>
                 </div>
 
             </div>

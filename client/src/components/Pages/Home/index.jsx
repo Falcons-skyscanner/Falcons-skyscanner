@@ -2,9 +2,9 @@ import React from 'react'
 import SearchComponent from './SearchComponent'
 import EveryWhere from './EverywhereComponent'
 
-const HomePage = () => (
+const HomePage = ({getFlightsData}) => (
     <div>
-        <SearchComponent/>
+        <SearchComponent getFlightsData={getFlightsData}/>
         <EveryWhere />
     </div>
 )
