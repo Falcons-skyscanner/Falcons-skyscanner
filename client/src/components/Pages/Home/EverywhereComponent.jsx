@@ -37,8 +37,6 @@ class Everywhere extends Component {
             </div>
           </div>
 
-
-
         </div>
 
 

@@ -12,12 +12,11 @@ class App extends Component {
     return (
       <Router>
         <div>
-            
       <Route path="/home" component={Everywhere} />
       <Route path="/searcheverywhere" component={SearchEveryWhere} />
      
      </div>
-      </Router>       
+      </Router>     
       
 
     );
