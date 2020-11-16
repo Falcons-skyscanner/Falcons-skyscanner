@@ -1,0 +1,22 @@
+ 
+  body {
+    font-family: "Times New Roman", Times, serif;
+  }
+  
+  /* Float four columns side by side */
+  .column {
+    float: left;
+    width: 25%;
+    padding: 45px;
+  }
+  
+   
+  /* Style the counter cards */
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 25px;
+    text-align: center;
+    background-color: #f1f1f1;
+  }
+
+  
