@@ -31,6 +31,12 @@ app.use('/api/flights', require('./routes/flights'));
 app.use('/api/card', require('./routes/card'));
 
 
+
+app.use((req,res) => {
+    res.send('not found')
+})
+
+
 const port = process.env.PORT || 5000
 
 app.listen(port, () => {

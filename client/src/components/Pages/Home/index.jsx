@@ -1,10 +1,13 @@
+import React from 'react'
 import SearchComponent from './SearchComponent'
-function Index() {
-    return (
-        <div>
-            <SearchComponent/>
-        </div>
-    );
-}
+import EveryWhere from './EverywhereComponent'
 
-export default Index;
+const HomePage = ({getFlightsData}) => (
+    <div>
+        <SearchComponent getFlightsData={getFlightsData}/>
+        <EveryWhere />
+    </div>
+)
+
+
+export default HomePage

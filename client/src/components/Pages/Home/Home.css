@@ -1,3 +1,49 @@
+.carosel__img{
+    width: 93vw;
+    height: 450px;
+    
+}
+
+.img_container{
+    width: 93vw;
+    height: 450px;
+    background-image: url('https://cdn.ikointl.com/sites/default/files/4_1_0_0.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.img_container1{
+    width: 93vw;
+    height: 450px;
+    background-image: url('https://blog.virtuoso.com/wp-content/uploads/2016/04/WhyPeopleTravel_main.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+.img_container2{
+    width: 93vw;
+    height: 450px;
+    background-image: url('https://i2.wp.com/www.smartertravel.com/uploads/2019/02/woman-traveling-norway-sightseeing.jpg?resize=1400%2C500&ssl=1');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+.img_container3{
+    width: 93vw;
+    height: 450px;
+    background-image: url('https://miro.medium.com/max/2560/1*2SDFmeWqZqwgHhXBAw-pOA.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
 .searchBox{
     display: flex;
     justify-content: space-between;
@@ -5,7 +51,7 @@
     padding: 30px;
     background-color:whitesmoke ;
     position: relative;
-    /* top : -300px; */
+    top : -300px;
     width: 75%;
     margin-left: 11%;
     opacity: 0.9;

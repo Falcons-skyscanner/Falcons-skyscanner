@@ -1,14 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import OpenSelect from '../../SharedComponents/Material-UI/OpenSelect'
 import DatePicker from '../../SharedComponents/Material-UI/DatePicker'
 import Asynchronous from '../../SharedComponents/Material-UI/autoComplete'
 import Button from '@material-ui/core/Button';
+import SimpleSlider from '../../SharedComponents/Material-UI/SimpleSlider'
 import './Home.css'
 
 
 class SearchComponent extends React.Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
             originplace: "",
             destinationplace: "",
@@ -43,7 +45,8 @@ class SearchComponent extends React.Component {
             .then(response => response.json()
             )
             .then((data) => {
-                console.log(data)
+                // console.log(data)
+                this.props.getFlightsData(data)
             })
             .catch(err => {
                 console.error(err);
@@ -53,13 +56,20 @@ class SearchComponent extends React.Component {
     render() {
 
         return (
-            <div className="searchBox">
-                <Asynchronous fieldName="From" setOrigin={this.setOrigin} />
-                <Asynchronous fieldName="To" setDest={this.setDest} />
-                <DatePicker bound="Depart" setOutDate={this.setOutDate} />
-                <DatePicker bound="Return" setInDate={this.setInDate} />
-                <OpenSelect />
-                <Button onClick={() => this.postReq(this.state)} style={{ marginLeft: "8px" }} variant="contained" size="large" color="secondary">search</Button>
+            <div>
+                <SimpleSlider />
+
+                <div className="searchBox">
+                    <Asynchronous fieldName="From" setOrigin={this.setOrigin} />
+                    <Asynchronous fieldName="To" setDest={this.setDest} />
+                    <DatePicker bound="Depart" setOutDate={this.setOutDate} />
+                    <DatePicker bound="Return" setInDate={this.setInDate} />
+                    <OpenSelect />
+                    <Link to="/search">
+                        <Button onClick={() => this.postReq(this.state)} style={{ marginLeft: "8px" }} color="secondary" variant="contained" size="large">search</Button>
+                    </Link>
+                </div>
+
             </div>
         );
     }
