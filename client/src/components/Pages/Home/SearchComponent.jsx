@@ -1,7 +1,7 @@
 import React from 'react';
-import OpenSelect from '../../SharedComponents/OpenSelect'
-import DatePicker from '../../SharedComponents/DatePicker'
-import Asynchronous from '../../SharedComponents/autoComplete'
+import OpenSelect from '../../SharedComponents/Material-UI/OpenSelect'
+import DatePicker from '../../SharedComponents/Material-UI/DatePicker'
+import Asynchronous from '../../SharedComponents/Material-UI/autoComplete'
 import Button from '@material-ui/core/Button';
 import './Home.css'
 
@@ -59,9 +59,7 @@ class SearchComponent extends React.Component {
                 <DatePicker bound="Depart" setOutDate={this.setOutDate} />
                 <DatePicker bound="Return" setInDate={this.setInDate} />
                 <OpenSelect />
-                <Button onClick={() => this.postReq(this.state)} style={{ marginLeft: "8px" }} variant="contained" size="large">
-                    search
-                </Button>
+                <Button onClick={() => this.postReq(this.state)} style={{ marginLeft: "8px" }} variant="contained" size="large" color="secondary">search</Button>
             </div>
         );
     }
