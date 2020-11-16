@@ -50,7 +50,7 @@ class App extends React.Component {
         <Header currentUser={currentUser} userId={userId} />
         <Switch>
           <Route exact path='/' render={() => <HomePage getFlightsData={this.getFlightsData} />} />
-          <Route path='/search' render={() => <SearchPage flightsData={flightsData} />} />
+          <Route path='/search' render={() => <SearchPage flightsData={flightsData} getFlightsData={this.getFlightsData} />} />
           <Route path='/profile' render={ () => <UserProfile /> } />
         </Switch>
         

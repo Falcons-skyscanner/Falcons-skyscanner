@@ -4,7 +4,6 @@ import OpenSelect from '../../sharedComponents/Material-UI/OpenSelect'
 import DatePicker from '../../sharedComponents/Material-UI/DatePicker'
 import Asynchronous from '../../sharedComponents/Material-UI/autoComplete'
 import Button from '@material-ui/core/Button';
-import SimpleSlider from '../../sharedComponents/Material-UI/SimpleSlider'
 import './Home.css'
 
 
@@ -15,7 +14,7 @@ class SearchComponent extends React.Component {
             originplace: "",
             destinationplace: "",
             outboundpartialdate: "",
-            inboundpartialdate: "",
+            inboundpartialdate: ""
         }
     }
 
@@ -54,12 +53,12 @@ class SearchComponent extends React.Component {
     }
 
     render() {
-
+        
         return (
             <div>
-                <SimpleSlider />
+                
 
-                <div className="searchBox">
+                <div className={this.props.toggle ? 'searchBoxTicket' : 'searchBox'}>
                     <Asynchronous fieldName="From" setOrigin={this.setOrigin} />
                     <Asynchronous fieldName="To" setDest={this.setDest} />
                     <DatePicker bound="Depart" setOutDate={this.setOutDate} />

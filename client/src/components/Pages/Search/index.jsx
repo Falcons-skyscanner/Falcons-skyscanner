@@ -4,13 +4,14 @@ import SearchComponent from '../../Pages/Home/SearchComponent'
 
 import './Search.css'
 
-const SearchPage = ({flightsData}) => {
+const SearchPage = ({flightsData , getFlightsData}) => {
     console.log(flightsData)
     const Carriers = flightsData.Carriers
     const Places = flightsData.Places
+    const toggle = true
     return(
         <div className='searchpage'>
-            {/* <SearchComponent/> */}
+            <SearchComponent toggle={toggle} getFlightsData={getFlightsData}/>
             {/* <h1> Search Page</h1> */}
             {
                 flightsData.Quotes?
