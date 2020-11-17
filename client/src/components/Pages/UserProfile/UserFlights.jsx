@@ -28,16 +28,23 @@ class UserFlights extends React.Component {
         fetch('http://localhost:5000/api/flights/userTickets', requestOptions)
             .then(response => response.json())
             .then(data => {
-                console.log(data)
-                this.setState({ userTickets: data })
+                console.log(data.tickets)
+                this.setState({ userTickets: data.tickets })
             })
     }
 
     render() {
         return (
             <div className='user__flights'>
-                <h1> User Profile Page </h1>
-                <UserTicket/>
+                {
+                    this.state.userTickets ?
+                        this.state.userTickets.map((ticket, id) => {
+                            return <UserTicket ticket={ticket} key={id} />
+
+                        })
+                        : <div></div>
+                }
+
             </div>
         )
     }
