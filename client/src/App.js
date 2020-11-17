@@ -37,7 +37,7 @@ class App extends React.Component {
   }
 
   getFlightsData = (data) => {
-    this.setState({ flightsData: data })
+    this.setState({ flightsData: data } )
   }
 
 
