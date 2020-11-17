@@ -10,6 +10,7 @@ import {
 export default function MaterialUIPickers({ bound, setOutDate, setInDate }) {
     // The first commit of Material-UI
     const [selectedDate, setSelectedDate] = React.useState(new Date());
+    const [open, setOpen] = React.useState(false);
 
     const handleDateChange = (date) => {
         setSelectedDate(date);
@@ -21,6 +22,7 @@ export default function MaterialUIPickers({ bound, setOutDate, setInDate }) {
             setInDate(formatDate(date))
             console.log('second')
         }
+        setOpen(false)
     };
 
     const formatDate = (date) => {
@@ -49,6 +51,9 @@ export default function MaterialUIPickers({ bound, setOutDate, setInDate }) {
                         format="MM/dd/yyyy"
                         margin="normal"
                         id="date-picker-inline"
+                        onOpen={() => setOpen(true)}
+                        onClose={() => setOpen(false)}
+                        open={open}
                         label={bound}
                         value={selectedDate}
                         onChange={handleDateChange}
