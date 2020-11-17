@@ -11,29 +11,43 @@ const ticketSchema = mongoose.Schema({
         ref: 'User'
     },
     flightNo: {
-        type: String
+        type: String,
+        unique : true
     },
     departureTime: {
-        required: true,
+        
         type: String
     },
     arrivalTime: {
+        
+        type: String
+    },
+    carrierOutboundLeg: {
         required: true,
         type: String
     },
-    departureAirport: {
+    originOutboundLeg: {
         required: true,
         type: String
     },
-    destinationAirport: {
+    destinationOutboundLeg: {
+        required: true,
+        type: String
+    },
+    carrierInboundLeg: {
+        required: true,
+        type: String
+    },
+    originInboundLeg: {
+        required: true,
+        type: String
+    },
+    destinationInboundLeg: {
         required: true,
         type: String
     },
     price: {
         required: true,
-        type: String
-    },
-    typeOfFlight: {
         type: String
     }
 }, { timestamps: true })

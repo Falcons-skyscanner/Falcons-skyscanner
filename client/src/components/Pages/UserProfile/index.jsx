@@ -3,11 +3,11 @@ import UserDetails from './UserDetails'
 import UserFlights from './UserFlights'
 import './User.css'
 
-const UserProfile = ({name,email}) => {
+const UserProfile = ({name,email ,userId}) => {
     return(
         <div className='user'>
             <UserDetails name={name} email={email} />
-            <UserFlights />
+            <UserFlights userId={userId}/>
         </div>
     )
 }
