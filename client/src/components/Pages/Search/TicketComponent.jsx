@@ -37,14 +37,9 @@ const TicketComponent = ({ flight, Carriers, Places, userId }) => {
         destinationOutboundLeg: getName(flight.OutboundLeg.DestinationId, Places),
         carrierInboundLeg: getName(flight.InboundLeg.CarrierIds[0], Carriers),
         originInboundLeg: getName(flight.InboundLeg.OriginId, Places),
-<<<<<<< HEAD
-        destinationInboundLeg: getName(flight.InboundLeg.DestinationId, Places)
-
-=======
         destinationInboundLeg: getName(flight.InboundLeg.DestinationId, Places),
         outboundDate: flight.OutboundLeg.DepartureDate.split('T')[0],
         inboundDate:flight.InboundLeg.DepartureDate.split('T')[0]
->>>>>>> c6a044d88f7fd740b6e3e79f2f3f10960cce708e
     }
 
     const addTicket = (obj) => {

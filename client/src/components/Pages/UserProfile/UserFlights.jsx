@@ -28,20 +28,14 @@ class UserFlights extends React.Component {
         fetch('http://localhost:5000/api/flights/userTickets', requestOptions)
             .then(response => response.json())
             .then(data => {
-<<<<<<< HEAD
                 console.log(data.tickets)
                 this.setState({ userTickets: data.tickets })
-=======
-                console.log(data)
-                this.setState({ userTickets: data })
->>>>>>> c6a044d88f7fd740b6e3e79f2f3f10960cce708e
             })
     }
 
     render() {
         return (
             <div className='user__flights'>
-<<<<<<< HEAD
                 {
                     this.state.userTickets ?
                         this.state.userTickets.map((ticket, id) => {
@@ -51,10 +45,6 @@ class UserFlights extends React.Component {
                         : <div></div>
                 }
 
-=======
-                <h1> User Profile Page </h1>
-                <UserTicket/>
->>>>>>> c6a044d88f7fd740b6e3e79f2f3f10960cce708e
             </div>
         )
     }
