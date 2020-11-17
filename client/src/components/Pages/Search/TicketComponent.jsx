@@ -38,6 +38,7 @@ const TicketComponent = ({ flight, Carriers, Places, userId }) => {
         carrierInboundLeg: getName(flight.InboundLeg.CarrierIds[0], Carriers),
         originInboundLeg: getName(flight.InboundLeg.OriginId, Places),
         destinationInboundLeg: getName(flight.InboundLeg.DestinationId, Places)
+
     }
 
     const addTicket = (obj) => {
@@ -74,6 +75,7 @@ const TicketComponent = ({ flight, Carriers, Places, userId }) => {
                     <div className='ticket__Outbound'>
                         <h4>{getName(flight.OutboundLeg.DestinationId, Places)}</h4>
                     </div>
+                    <h4 className="ticket__date">{flight.OutboundLeg.DepartureDate.split('T')[0]}</h4>
                 </div>
 
                 <div className='tickent__info2'>
@@ -87,6 +89,7 @@ const TicketComponent = ({ flight, Carriers, Places, userId }) => {
                     <div className='ticket__Outbound'>
                         <h4>{getName(flight.InboundLeg.DestinationId, Places)}</h4>
                     </div>
+                    <h4 className="ticket__date">{flight.InboundLeg.DepartureDate.split('T')[0]}</h4>
                 </div>
 
             </div>

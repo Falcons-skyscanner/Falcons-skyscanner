@@ -1,16 +1,17 @@
 import React from 'react'
+import UserTicket from './UserTicket'
 
 
 class UserFlights extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props)
         this.state = {
-            userTickets : []
+            userTickets: []
         }
     }
 
     componentDidMount = () => {
-        const userId = { userId : this.props.userId }
+        const userId = { userId: this.props.userId }
         this.getTickets(userId)
     }
 
@@ -18,25 +19,33 @@ class UserFlights extends React.Component {
         const requestOptions = {
             method: 'POST',
             headers: {
-              'Content-Type': 'application/json',
-              'auth-sky': localStorage.getItem('auth-sky')
+                'Content-Type': 'application/json',
+                'auth-sky': localStorage.getItem('auth-sky')
             },
             body: JSON.stringify(obj)
-      
-          };
-          fetch('http://localhost:5000/api/flights/userTickets', requestOptions)
+
+        };
+        fetch('http://localhost:5000/api/flights/userTickets', requestOptions)
             .then(response => response.json())
             .then(data => {
-              console.log(data)
-              this.setState({ userTickets:data })
+                console.log(data.tickets)
+                this.setState({ userTickets: data.tickets })
             })
     }
 
-    render(){
+    render() {
         return (
             <div className='user__flights'>
-            <h1> User Profile Page </h1>
-        </div>
+                {
+                    this.state.userTickets ?
+                        this.state.userTickets.map((ticket, id) => {
+                            return <UserTicket ticket={ticket} key={id} />
+
+                        })
+                        : <div></div>
+                }
+
+            </div>
         )
     }
 }

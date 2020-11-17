@@ -14,7 +14,7 @@ router.post('/addTicket',auth , (req,res) => {
 })
 
 router.post('/userTickets',auth , (req,res) => {
-    Ticket.find({ 'userID': req.body.userId })
+    Ticket.find({ 'userID': req.body.userId }).sort({'_id':-1})
         .populate('userID')
         .exec( (err, tickets) => {
             if(err) return res.status(404).json({success:false})
