@@ -3,6 +3,7 @@ import './App.css';
 import HomePage from './components/Pages/Home/index';
 import Header from './components/SharedComponents/Header/Header'
 import SearchPage from './components/Pages/Search/index'
+import UserProfile from './components/Pages/UserProfile/index'
 
 import { Switch, Route, Redirect } from 'react-router-dom';
 
@@ -11,7 +12,9 @@ class App extends React.Component {
   constructor() {
     super()
     this.state = {
+      userId : localStorage.getItem('userId'),
       currentUser: '',
+      email : '',
       flightsData : []
     }
   }
@@ -29,7 +32,7 @@ class App extends React.Component {
       .then(response => response.json())
       .then(data => {
         console.log(data)
-        this.setState({ currentUser : data.name })
+        this.setState({ currentUser : data.name , email : data.email })
       })
   }
 
@@ -41,13 +44,14 @@ class App extends React.Component {
 
 
   render() {
-    const { currentUser,flightsData } = this.state
+    const { currentUser,flightsData,userId } = this.state
     return (
       <div className="App">
-        <Header currentUser={currentUser} />
+        <Header currentUser={currentUser} userId={userId} />
         <Switch>
           <Route exact path='/' render={() => <HomePage getFlightsData={this.getFlightsData} />} />
-          <Route path='/search' render={() => <SearchPage flightsData={flightsData} />} />
+          <Route path='/search' render={() => <SearchPage flightsData={flightsData} getFlightsData={this.getFlightsData} />} />
+          <Route path='/profile' render={ () => <UserProfile /> } />
         </Switch>
         
       </div>

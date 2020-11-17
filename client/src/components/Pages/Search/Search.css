@@ -1,0 +1,90 @@
+.searchpage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.ticket{
+    display: flex;
+    width: 66%;
+    height: 180px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 6px -6px #777;
+
+    /* border: 1px solid grey; */
+    border-radius: 10px;
+    
+}
+
+.tickent__info{
+    flex: .7;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border: 0px solid grey;
+    border-right: 0px;
+    border-radius: 10px;
+    border-top-right-radius: 11px ;
+    border-bottom-right-radius: 11px ;
+    background-color: white;
+    
+}
+
+.tickent__info1{
+    width: 100%;
+    flex: 0.5;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid wheat;
+    position: relative;
+}
+
+.tickent__info2{
+    width: 100%;
+    flex: 0.5;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+}
+
+.ticket__Carrier{
+    padding: 0px;
+    margin: 0px;
+    position: absolute;
+    top: 13px;
+    left: 20px;
+    font-size: x-small;
+    color:  rgb(47, 101, 126);
+    font-weight: 900;
+    text-transform: capitalize;
+    
+}
+
+.ticket__Outbound{
+    margin-top: 5px;
+}
+
+.ticket__price{
+    flex: .3;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    flex-direction: column;
+    border: 0px solid grey;
+    border-radius: 10px;
+    border-top-left-radius: 11px ;
+    border-bottom-left-radius: 11px ;
+    background-color: rgba(78, 162, 201, 0.548);
+}
+
+
+.ticket_img{
+    width: 50px;
+    object-fit: contain;
+}
+
+
