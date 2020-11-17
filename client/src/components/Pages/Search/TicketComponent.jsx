@@ -14,7 +14,7 @@ const TicketComponent = ({ flight, Carriers, Places, userId }) => {
 
     const hashCode = function(string) {
         var hash = 0;
-        if (string.length == 0) {
+        if (string.length === 0) {
             return hash;
         }
         for (var i = 0; i < string.length; i++) {
