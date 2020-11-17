@@ -4,7 +4,7 @@ import OpenSelect from '../../SharedComponents/Material-UI/OpenSelect'
 import DatePicker from '../../SharedComponents/Material-UI/DatePicker'
 import Asynchronous from '../../SharedComponents/Material-UI/autoComplete'
 import Button from '@material-ui/core/Button';
-import SimpleSlider from '../../SharedComponents/Material-UI/SimpleSlider'
+
 import './Home.css'
 
 
@@ -15,7 +15,7 @@ class SearchComponent extends React.Component {
             originplace: "",
             destinationplace: "",
             outboundpartialdate: "",
-            inboundpartialdate: "",
+            inboundpartialdate: ""
         }
     }
 
@@ -35,7 +35,7 @@ class SearchComponent extends React.Component {
     }
 
     postReq = (obj) => {
-        fetch(`https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsequotes/v1.0/US/USD/en-US/${obj.originplace}/${obj.destinationplace}/${obj.outboundpartialdate}?inboundpartialdate=${obj.inboundpartialdate}`, {
+        fetch(`https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browseroutes/v1.0/US/USD/en-US/${obj.originplace}/${obj.destinationplace}/${obj.outboundpartialdate}/${obj.inboundpartialdate}`, {
             "method": "GET",
             "headers": {
                 "x-rapidapi-key": "df421e16a0msh56c7f5a0b77c14bp1128c1jsn3a5e2f818ea5",
@@ -54,18 +54,18 @@ class SearchComponent extends React.Component {
     }
 
     render() {
-
+        
         return (
             <div>
-                <SimpleSlider />
+                
 
-                <div className="searchBox">
+                <div className={this.props.toggle ? 'searchBoxTicket' : 'searchBox'}>
                     <Asynchronous fieldName="From" setOrigin={this.setOrigin} />
                     <Asynchronous fieldName="To" setDest={this.setDest} />
                     <DatePicker bound="Depart" setOutDate={this.setOutDate} />
                     <DatePicker bound="Return" setInDate={this.setInDate} />
                     <OpenSelect />
-                    <Link to="/search">
+                    <Link to="/search" style={{textDecoration:"none"}}>
                         <Button onClick={() => this.postReq(this.state)} style={{ marginLeft: "8px" }} color="secondary" variant="contained" size="large">search</Button>
                     </Link>
                 </div>
