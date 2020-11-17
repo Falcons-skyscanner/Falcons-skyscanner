@@ -18,11 +18,12 @@ class SimpleSlider extends Component {
       <div>
         
         <Slider {...settings}>
-          <div className='img_container'>
+
+          <div className='img_container2'>
           </div>
           <div className='img_container1'>
           </div>
-          <div className='img_container2' >
+          <div className='img_container' >
           </div>
           <div className='img_container3' >
           </div>
