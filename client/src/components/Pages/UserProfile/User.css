@@ -1,0 +1,35 @@
+.user{
+    display: flex;
+    
+}
+
+.user__details{
+    flex: .3;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+
+}
+
+.user__flights{
+    margin-top: 2.5rem;
+    flex: .7;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.user__card{
+    margin-top: 2.5rem;
+    width: 220px;
+    min-height: 300px;
+    background-color: rgb(189, 226, 250);
+    box-shadow: 0 10px 6px -6px #777;
+}
+
+.user__avatar{
+    width: 66%;
+    object-fit: contain;
+    margin-top: 25px;
+}

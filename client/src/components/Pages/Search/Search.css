@@ -64,6 +64,18 @@
     
 }
 
+.ticket__date{
+    padding: 0px;
+    margin: 0px;
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    font-size: small;
+    color:  rgb(47, 101, 126);
+    font-weight: 900;
+    text-transform: capitalize;
+}
+
 .ticket__Outbound{
     margin-top: 5px;
 }
