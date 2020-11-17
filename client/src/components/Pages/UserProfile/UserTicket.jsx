@@ -1,8 +1,13 @@
 import React from 'react'
 import Button from '@material-ui/core/Button';
 
+<<<<<<< HEAD
 const UserTicket = ({ ticket }) => {
     console.log(ticket)
+=======
+const UserTicket = () => {
+
+>>>>>>> c6a044d88f7fd740b6e3e79f2f3f10960cce708e
     // console.log(flightsData)
     return (
         <div className='ticket'>
@@ -54,7 +59,3 @@ const UserTicket = ({ ticket }) => {
 
 
 export default UserTicket
-
-{/* <div className='ticket__arrow'>
-                    <p style={{ fontSize: '50px' }}> ⇾ </p>
-                </div> */}

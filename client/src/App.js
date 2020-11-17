@@ -7,7 +7,6 @@ import UserProfile from './components/Pages/UserProfile/index'
 
 import { Switch, Route, Redirect } from 'react-router-dom';
 
-
 class App extends React.Component {
   constructor() {
     super()
