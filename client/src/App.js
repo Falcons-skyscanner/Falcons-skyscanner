@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import HomePage from './components/Pages/Home/index';
-import Header from './components/SharedComponents/Header/Header'
+import Header from './components/sharedComponents/Header/Header'
 import SearchPage from './components/Pages/Search/index'
 import UserProfile from './components/Pages/UserProfile/index'
 
@@ -50,8 +50,8 @@ class App extends React.Component {
         <Header currentUser={currentUser} userId={userId} />
         <Switch>
           <Route exact path='/' render={() => <HomePage getFlightsData={this.getFlightsData} />} />
-          <Route path='/search' render={() => <SearchPage flightsData={flightsData} getFlightsData={this.getFlightsData} />} />
-          <Route path='/profile' render={ () => <UserProfile /> } />
+          <Route path='/search' render={() => <SearchPage flightsData={flightsData} getFlightsData={this.getFlightsData} userId={userId} />} />
+          <Route path='/profile' render={ () => <UserProfile name={this.state.currentUser} email={this.state.email}/> } />
         </Switch>
         
       </div>

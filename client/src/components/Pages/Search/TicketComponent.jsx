@@ -1,7 +1,7 @@
 import React from 'react'
 import Button from '@material-ui/core/Button';
 
-const TicketComponent = ({ flight, Carriers, Places }) => {
+const TicketComponent = ({ flight, Carriers, Places, userId }) => {
     const getName = (id, arr) => {
         let name = ''
         arr.forEach((el, i) => {
@@ -11,7 +11,13 @@ const TicketComponent = ({ flight, Carriers, Places }) => {
         })
         return name
     }
-    // console.log(flightsData)
+    const userTicket = {
+        userId : userId,
+        price : flight.MinPrice,
+        departureAirport:getName(flight.OutboundLeg.OriginId, Places),
+        destinationAirport:getName(flight.OutboundLeg.DestinationId, Places),
+
+    }
     return (
         <div className='ticket'>
 
@@ -29,7 +35,7 @@ const TicketComponent = ({ flight, Carriers, Places }) => {
                     <h1>➾</h1>
 
                     <div className='ticket__Outbound'>
-                        <h4>{getName(flight.InboundLeg.OriginId, Places)}</h4>
+                        <h4>{getName(flight.OutboundLeg.DestinationId, Places)}</h4>
                     </div>
                 </div>
 
@@ -38,7 +44,7 @@ const TicketComponent = ({ flight, Carriers, Places }) => {
                     <h4 className="ticket__Carrier">{getName(flight.InboundLeg.CarrierIds[0], Carriers)}</h4>
 
                     <div className="ticket__Outbound">
-                        <h4>{getName(flight.OutboundLeg.DestinationId, Places)}</h4>
+                        <h4>{getName(flight.InboundLeg.OriginId, Places)}</h4>
                     </div>
                     <h1>➾</h1>
                     <div className='ticket__Outbound'>

@@ -19,6 +19,9 @@
 .Dialog__image{
     width: 60%;
     object-fit: contain;
+    border-radius:505px;
+    /* box-shadow: 0px 0px 5px 5px white inset; */
+
 }
 
 .login_button{

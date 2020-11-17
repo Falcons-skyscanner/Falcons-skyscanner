@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-import OpenSelect from '../../SharedComponents/Material-UI/OpenSelect'
-import DatePicker from '../../SharedComponents/Material-UI/DatePicker'
-import Asynchronous from '../../SharedComponents/Material-UI/autoComplete'
+import OpenSelect from '../../sharedComponents/Material-UI/OpenSelect'
+import DatePicker from '../../sharedComponents/Material-UI/DatePicker'
+import Asynchronous from '../../sharedComponents/Material-UI/autoComplete'
 import Button from '@material-ui/core/Button';
 
 import './Home.css'

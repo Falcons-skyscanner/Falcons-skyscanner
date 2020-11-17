@@ -11,7 +11,6 @@ const ticketSchema = mongoose.Schema({
         ref: 'User'
     },
     flightNo: {
-        required: true,
         type: String
     },
     departureTime: {
@@ -35,7 +34,6 @@ const ticketSchema = mongoose.Schema({
         type: String
     },
     typeOfFlight: {
-        required: true,
         type: String
     }
 }, { timestamps: true })
