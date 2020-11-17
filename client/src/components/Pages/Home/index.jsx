@@ -1,7 +1,7 @@
 import React from 'react'
 import SearchComponent from './SearchComponent'
 import EveryWhere from './EverywhereComponent'
-import SimpleSlider from '../../sharedComponents/Material-UI/SimpleSlider'
+import SimpleSlider from '../../SharedComponents/Material-UI/SimpleSlider'
 
 const HomePage = ({getFlightsData}) => (
     <div>
