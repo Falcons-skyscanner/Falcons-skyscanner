@@ -2,7 +2,7 @@ import React from 'react'
 import Button from '@material-ui/core/Button';
 
 const UserTicket = () => {
-    
+
     // console.log(flightsData)
     return (
         <div className='ticket'>
@@ -17,7 +17,7 @@ const UserTicket = () => {
                         <h4>Carrier 1</h4>
                     </div>
 
-                
+
                     <h1>➾</h1>
 
                     <div className='ticket__Outbound'>
@@ -52,7 +52,3 @@ const UserTicket = () => {
 
 
 export default UserTicket
-
-{/* <div className='ticket__arrow'>
-                    <p style={{ fontSize: '50px' }}> ⇾ </p>
-                </div> */}

@@ -14,12 +14,10 @@ const ticketSchema = mongoose.Schema({
         type: String,
         unique : true
     },
-    departureTime: {
-        
+    outboundDate: {
         type: String
     },
-    arrivalTime: {
-        
+    inboundDate: {
         type: String
     },
     carrierOutboundLeg: {
