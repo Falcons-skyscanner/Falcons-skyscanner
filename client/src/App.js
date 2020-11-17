@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import HomePage from './components/Pages/Home/index';
-import Header from './components/sharedComponents/Header/Header'
+import Header from './components/SharedComponents/Header/Header'
 import SearchPage from './components/Pages/Search/index'
 import UserProfile from './components/Pages/UserProfile/index'
 
@@ -37,7 +37,7 @@ class App extends React.Component {
   }
 
   getFlightsData = (data) => {
-    this.setState({ flightsData: data })
+    this.setState({ flightsData: data } )
   }
 
 
