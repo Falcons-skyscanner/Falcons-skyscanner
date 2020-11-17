@@ -25,7 +25,7 @@ const TicketComponent = ({ flight, Carriers, Places, userId }) => {
         return hash;
     }
 
-    const valueTohash = flight.MinPrice+getName(flight.OutboundLeg.CarrierIds[0], Carriers)+getName(flight.OutboundLeg.OriginId, Places)+getName(flight.OutboundLeg.DestinationId, Places)
+    const valueTohash = flight.MinPrice+getName(flight.OutboundLeg.CarrierIds[0], Carriers)+getName(flight.OutboundLeg.OriginId, Places)+getName(flight.OutboundLeg.DestinationId, Places)+userId
 
 
     const userTicket = {
@@ -43,7 +43,7 @@ const TicketComponent = ({ flight, Carriers, Places, userId }) => {
     const addTicket = (obj) => {
         const requestOptions = {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: { 'Content-Type': 'application/json','auth-sky' : localStorage.getItem('auth-sky') },
             body: JSON.stringify(obj)
         };
         fetch('http://localhost:5000/api/flights/addTicket', requestOptions)

@@ -10,8 +10,8 @@ class UserFlights extends React.Component {
     }
 
     componentDidMount = () => {
-        console.log(this.props.userId)
-        this.getTickets(this.props.userId)
+        const userId = { userId : this.props.userId }
+        this.getTickets(userId)
     }
 
     getTickets = (obj) => {
@@ -21,7 +21,7 @@ class UserFlights extends React.Component {
               'Content-Type': 'application/json',
               'auth-sky': localStorage.getItem('auth-sky')
             },
-            body: obj
+            body: JSON.stringify(obj)
       
           };
           fetch('http://localhost:5000/api/flights/userTickets', requestOptions)
