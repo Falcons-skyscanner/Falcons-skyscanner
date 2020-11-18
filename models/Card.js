@@ -16,7 +16,13 @@ const creditSchema = mongoose.Schema({
     },
     stripeToken: {
         type: String
-    }
+    },
+    billingDetails: {
+        type: Object
+    },
+    cardDetails: {
+        type: Object
+    },
 }, { timestamps: true })
 
 //Create the model according to Scheema

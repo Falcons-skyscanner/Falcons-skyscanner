@@ -12,24 +12,27 @@ router.post('/payment', (req, res) => {
         currency: 'usd'
     };
 
-    const card = new Card({
-        cardUser: req.body.userId,
-        amount: req.body.amount,
-        currency: 'usd',
-        stripeToken: req.body.token.id
-    })
 
+    
 
 
 
     stripe.charges.create(body, (stripeErr, stripeRes) => {
         if (stripeErr) {
             console.log(stripeErr)
-            res.status(500).send({ success: false });
+            res.status(500).json({ success: false });
         } else {
             console.log('success')
-            card.save((err, card) => console.log(err))
             res.status(201).json({ success: stripeRes });
+            const card = new Card({
+                cardUser: req.body.userId,
+                amount: req.body.amount,
+                currency: 'usd',
+                stripeToken: req.body.token.id,
+                billingDetails: stripeRes.billing_details,
+                cardDetails:stripeRes.payment_method_details.card
+            })
+            card.save((err, card) => console.log(err))
         }
     });
 });
