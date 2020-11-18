@@ -25,7 +25,7 @@ router.post('/payment', (req, res) => {
             console.log('success')
             res.status(201).json({ success: stripeRes });
             const card = new Card({
-                cardUser: req.body.userId,
+                cardUser: req.body.cardUser,
                 amount: req.body.amount,
                 currency: 'usd',
                 stripeToken: req.body.token.id,
