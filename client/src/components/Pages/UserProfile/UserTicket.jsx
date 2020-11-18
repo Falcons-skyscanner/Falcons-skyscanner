@@ -1,6 +1,6 @@
 import React from 'react'
 import Button from '@material-ui/core/Button';
-import StripeButton from '../../SharedComponents/Stripe/StripeButton'
+// import StripeButton from '../../SharedComponents/Stripe/StripeButton'
 
 
 const UserTicket = ({ ticket,componentDidMount }) => {
@@ -19,7 +19,6 @@ const UserTicket = ({ ticket,componentDidMount }) => {
                 componentDidMount()
             })
     }
-
 
 
     return (

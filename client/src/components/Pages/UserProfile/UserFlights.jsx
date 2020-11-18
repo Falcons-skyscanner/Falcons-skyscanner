@@ -39,7 +39,7 @@ class UserFlights extends React.Component {
         return usertickets.reduce(( acc,userticket ) => acc + Number(userticket.price), 0)
     }
 
-
+    
 
     render() {
         
@@ -56,7 +56,7 @@ class UserFlights extends React.Component {
                 }
                 <div className='line'></div>
                 <div className='user__stripe'>
-                    <StripeButton name={this.props.name} price={this.totalAcc(this.state.userTickets)} />
+                    <StripeButton name={this.props.name} userId={this.props.userId} price={this.totalAcc(this.state.userTickets)} />
                 </div>
 
             </div>
