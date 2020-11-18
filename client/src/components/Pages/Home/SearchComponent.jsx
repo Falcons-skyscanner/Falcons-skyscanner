@@ -57,8 +57,6 @@ class SearchComponent extends React.Component {
         
         return (
             <div>
-                
-
                 <div className={this.props.toggle ? 'searchBoxTicket' : 'searchBox'}>
                     <Asynchronous fieldName="From" setOrigin={this.setOrigin} />
                     <Asynchronous fieldName="To" setDest={this.setDest} />
@@ -69,7 +67,6 @@ class SearchComponent extends React.Component {
                         <Button onClick={() => this.postReq(this.state)} style={{ marginLeft: "8px" }} color="secondary" variant="contained" size="large">search</Button>
                     </Link>
                 </div>
-
             </div>
         );
     }

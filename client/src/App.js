@@ -7,6 +7,7 @@ import UserProfile from './components/Pages/UserProfile/index'
 
 import { Switch, Route, Redirect } from 'react-router-dom';
 
+
 class App extends React.Component {
   constructor() {
     super()
@@ -36,11 +37,8 @@ class App extends React.Component {
   }
 
   getFlightsData = (data) => {
-    this.setState({ flightsData: data } )
+    this.setState({ flightsData: data })
   }
-
-
-
 
   render() {
     const { currentUser, flightsData, userId } = this.state
