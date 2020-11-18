@@ -25,7 +25,7 @@ export default function SelectDialog({addTicket,userTicket}) {
                 <DialogContent>
                     <div>
                         <div className="Dialog">
-                            <img className='Dialog__image' src='https://lh3.googleusercontent.com/proxy/OMsm84LnhNDyF3MB9_ixBwkOnecsgT7F12Qy1uf5pGnfPpDbWYyXluN2_WQq70ZoYkrhClEOJN7EWjgc-mntifL6VZtmkmk' alt='ss' />
+                            <img className='Dialog__image' src='https://ownacademy.co/wp-content/uploads/2018/10/Tick_Mark_Dark-512.png' alt='ss' />
                         </div>
                         <div className="AddDialog">
                             <h3>Added successfully</h3>
