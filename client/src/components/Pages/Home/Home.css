@@ -55,19 +55,6 @@
     width: 75%;
     margin-left: 11%;
     opacity: 0.9;
-    border-radius: 50px;
+    border-radius: 70px;
 }
 
-.searchBoxTicket{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px;
-    /* background-color:whitesmoke ; */
-    /* position: absolute; */
-    width: 75%;
-    margin-left: 10%;
-    /* opacity: 0.9; */
-    /* border-radius: 50px; */
-    margin-bottom: 30px;
-}

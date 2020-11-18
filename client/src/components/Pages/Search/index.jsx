@@ -15,7 +15,7 @@ const SearchPage = ({flightsData , getFlightsData , userId}) => {
                 flightsData.Quotes?
                 flightsData.Quotes.map(( flight,id ) => {
                     return <TicketComponent key={id} flight={flight} Carriers={Carriers} Places={Places} userId={userId} />
-                }):<div></div>
+                }):<div><h3>Looking for flights ...</h3></div>
             }
         </div>
     )
