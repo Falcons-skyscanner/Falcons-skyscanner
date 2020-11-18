@@ -30,4 +30,11 @@ router.post('/removeTicket', (req, res) => {
         .catch((err) => res.status(404).json({ success: false, err }))
 })
 
+router.post('/removeAllTickets', (req, res) => {
+    console.log(req.body)
+    Ticket.deleteMany({ 'userID': req.body.userId })
+        .then((status) => res.status(200).json({ success: true }))
+        .catch((err) => res.status(404).json({ success: false, err }))
+})
+
 module.exports = router
