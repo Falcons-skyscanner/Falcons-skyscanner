@@ -1,10 +1,9 @@
-.carosel__img{
+.carosel__img {
     width: 93vw;
     height: 450px;
-    
 }
 
-.img_container{
+.img_container {
     width: 93vw;
     height: 450px;
     background-image: url('https://cdn.ikointl.com/sites/default/files/4_1_0_0.jpg');
@@ -13,7 +12,7 @@
     background-position: center;
 }
 
-.img_container1{
+.img_container1 {
     width: 93vw;
     height: 450px;
     background-image: url('https://www.haveatravel.com/wp-content/uploads/2019/12/a8374ed83bdb55612927348d5cf6a4581.jpg');
@@ -22,8 +21,7 @@
     background-position: center;
 }
 
-
-.img_container2{
+.img_container2 {
     width: 93vw;
     height: 450px;
     background-image: url('https://i2.wp.com/www.smartertravel.com/uploads/2019/02/woman-traveling-norway-sightseeing.jpg?resize=1400%2C500&ssl=1');
@@ -32,9 +30,7 @@
     background-position: center;
 }
 
-
-
-.img_container3{
+.img_container3 {
     width: 93vw;
     height: 450px;
     background-image: url('https://www.go-today.com/stw/images/hero-images/country-hero-images/Italy.jpg');
@@ -43,53 +39,51 @@
     background-position: center;
 }
 
-
-.searchBox{
+.searchBox {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 30px;
-    background-color:whitesmoke ;
+    background-color: whitesmoke;
     position: relative;
-    top : -300px;
+    top: -300px;
     width: 75%;
     margin-left: 11%;
     opacity: 0.9;
-    border-radius: 50px;
+    border-radius: 70px;
 }
-
-.searchBoxTicket{
+.searchEveryTicket {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     padding: 30px;
-    /* background-color:whitesmoke ; */
+    background-color:white ;
     /* position: absolute; */
-    width: 75%;
-    margin-left: 10%;
-    /* opacity: 0.9; */
-    /* border-radius: 50px; */
+    width: 50%;
+    border-radius: 80px;
     margin-bottom: 30px;
 }
 
-
 div.column {
-    margin:55px;
-    border: 1px solid #ccc;
+    margin: 55px;
+    border: 0px solid #ccc;
     float: left;
-    width:25%;
+    width: 25%;
+    min-width: 250px;
 }
-  
-  div.column:hover {
-    border: 1px solid #777;
-  }
-  
-  div.column img {
+
+div.column img:hover {
+    border-radius: 35px;
+    width: 98%;
+}
+
+div.column img {
     width: 100%;
     height: auto;
-  }
-  
-  div.desc {
-    padding: 15px;
+    border-radius: 30px;
+}
+
+div.desc {
+    padding: 10px;
     text-align: center;
-  }
+}

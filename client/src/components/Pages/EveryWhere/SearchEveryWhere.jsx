@@ -1,77 +1,65 @@
-import React from "react";
+import React from 'react'
+import TicketComponent from '../Search/TicketComponent'
+import Asynchronous from '../../SharedComponents/Material-UI/autoComplete'
+import Button from '@material-ui/core/Button';
 
-import TextField from "@material-ui/core/TextField";
-import { makeStyles } from "@material-ui/core/styles";
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
-
-
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    "& .MuiTextField-root": {
-      margin: theme.spacing(2),
-      width: "30ch"
+class SearchComponent extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      originplace: "",
+      flightsData: [],
+      Carriers: [],
+      Places: []
     }
   }
-}));
 
-export default function SearchEveryWhere() {
-  const classes = useStyles();
-  const [state, setState] = React.useState({
-    checkedB: true,    
-  });
 
-  const handleChange = (event) => {
-    setState({ ...state, [event.target.name]: event.target.checked });
-    
-  };
+  postReq = (obj) => {
+    fetch(`https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browseroutes/v1.0/US/USD/en-US/${obj.originplace}/anywhere/anytime/anytime/`, {
+      "method": "GET",
+      "headers": {
+        "x-rapidapi-key": "df421e16a0msh56c7f5a0b77c14bp1128c1jsn3a5e2f818ea5",
+        "x-rapidapi-host": "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com"
+      }
+    })
+      .then(response => response.json()
+      )
+      .then((data) => {
+        this.setState({
+          flightsData: data,
+          Carriers: data.Carriers,
+          Places: data.Places
+        })
+      })
+      .catch(err => {
+        console.error(err);
+      });
+  }
 
-  return (
-    <form className={classes.root}>
-      <div>
-        <TextField
-          id="outlined-helperText"
-          label="To"
-          defaultValue="EveryWhere"
-          variant="outlined"
-        />
-        <TextField
-          id="outlined-helperText"
-          label="From"
-          defaultValue="Tucson International (TUS)"
-          variant="outlined"
-        />
+  setOrigin = async (plcaeId) => {
+    await this.setState({ originplace: `${plcaeId}-sky` })
+  }
 
-        <TextField
-          id="outlined-helperText"
-          label="Depart"
-          defaultValue="Cheapest Month"
-          variant="outlined"
-        />
 
-        <TextField
-          id="outlined-helperText"
-          label="Return"
-          defaultValue="Cheapest Month"
-          variant="outlined"
-        />
-      </div>
-
-      <div>
-      <FormControlLabel
-        control={
-          <Checkbox
-            checked={state.checkedB}
-            onChange={handleChange}
-            name="checkedB"
-            color="primary"
-          />
+  render() {
+    const { Carriers, Places,flightsData } = this.state
+    return (
+      <div className='searchpage'>
+        <div className='searchEveryTicket'>
+          <Asynchronous fieldName="From" setOrigin={this.setOrigin} />
+          <Button onClick={() => this.postReq(this.state)} style={{ marginLeft: "8px" }} color="secondary" variant="contained" size="large">search everywhere anytime</Button>
+        </div>
+        {
+          flightsData.Quotes ?
+            flightsData.Quotes.map((flight, id) => {
+              return <TicketComponent key={id} flight={flight} Carriers={Carriers} Places={Places} userId={this.props.userId} />
+            }) : <div><h3>Look for flights to anywhere at anytime</h3></div>
         }
-        label="Non-stop flights only"
-      />  
-        
-    </div>
-    </form>
-  );
+      </div>
+    )
+  }
 }
+
+
+export default SearchComponent

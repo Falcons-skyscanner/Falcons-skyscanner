@@ -48,12 +48,12 @@ class UserFlights extends React.Component {
             <div className='user__flights'>
                 <h1 style={{alignSelf:'flex-start'}}>User Tickets</h1>
                 {
-                    this.state.userTickets ?
+                    this.state.userTickets.length!==0 ?
                         this.state.userTickets.map((ticket, id) => {
                             return <UserTicket ticket={ticket} key={id} componentDidMount={this.componentDidMount} />
 
                         })
-                        : <div></div>
+                        : <div  style={{alignSelf:"flex-start"}}><h3>No Tickets</h3></div>
                 }
                 <div className='line'></div>
                 <div className='user__stripe'>

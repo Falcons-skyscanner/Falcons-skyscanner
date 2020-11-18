@@ -92,7 +92,18 @@
     border-bottom-left-radius: 11px ;
     background-color: rgba(78, 162, 201, 0.548);
 }
-
+.searchBoxTicket{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    background-color:white ;
+    /* position: absolute; */
+    width: 75%;
+    margin-left: 10%;
+    border-radius: 80px;
+    margin-bottom: 30px;
+}
 
 .ticket_img{
     width: 50px;
