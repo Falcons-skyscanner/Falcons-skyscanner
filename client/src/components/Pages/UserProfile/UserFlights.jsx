@@ -46,6 +46,7 @@ class UserFlights extends React.Component {
         return (
 
             <div className='user__flights'>
+                <h1 style={{alignSelf:'flex-start'}}>User Tickets</h1>
                 {
                     this.state.userTickets.length!==0 ?
                         this.state.userTickets.map((ticket, id) => {
