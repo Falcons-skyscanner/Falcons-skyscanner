@@ -36,11 +36,8 @@ class App extends React.Component {
   }
 
   getFlightsData = (data) => {
-    this.setState({ flightsData: data } )
+    this.setState({ flightsData: data })
   }
-
-
-
 
   render() {
     const { currentUser, flightsData, userId } = this.state
