@@ -1,3 +1,6 @@
+
+
+
 import React, { Component } from "react"
 import Slider from "react-slick"
 
@@ -31,5 +34,6 @@ class SimpleSlider extends Component {
     );
   }
 }
+
 
 export default SimpleSlider

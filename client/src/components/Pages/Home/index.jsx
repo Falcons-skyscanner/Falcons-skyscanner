@@ -12,4 +12,5 @@ const HomePage = ({getFlightsData}) => (
 )
 
 
+
 export default HomePage

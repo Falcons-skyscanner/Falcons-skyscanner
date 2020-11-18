@@ -1,13 +1,13 @@
 import React from 'react'
+import UserDetails from './UserDetails'
+import UserFlights from './UserFlights'
+import './User.css'
 
-const UserProfile =({ name, email }) => {
-
-    
+const UserProfile = ({name,email ,userId}) => {
     return(
         <div className='user'>
-                    <h4>{name}</h4>
-                    <h4>{email}</h4>
-                    
+            <UserDetails name={name} email={email} />
+            <UserFlights userId={userId}/>
         </div>
     )
 }

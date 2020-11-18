@@ -4,7 +4,7 @@ import SearchComponent from '../../Pages/Home/SearchComponent'
 
 import './Search.css'
 
-const SearchPage = ({flightsData , getFlightsData}) => {
+const SearchPage = ({flightsData , getFlightsData , userId}) => {
     console.log(flightsData)
     const Carriers = flightsData.Carriers
     const Places = flightsData.Places
@@ -16,7 +16,7 @@ const SearchPage = ({flightsData , getFlightsData}) => {
             {
                 flightsData.Quotes?
                 flightsData.Quotes.map(( flight,id ) => {
-                    return <TicketComponent key={id} flight={flight} Carriers={Carriers} Places={Places} />
+                    return <TicketComponent key={id} flight={flight} Carriers={Carriers} Places={Places} userId={userId} />
                 }):<div></div>
             }
             
