@@ -18,6 +18,7 @@ class SimpleSlider extends Component {
       <div>
         
         <Slider {...settings}>
+
           <div className='img_container2'>
           </div>
           <div className='img_container1'>

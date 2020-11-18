@@ -30,7 +30,9 @@ class Header extends React.Component {
                     this.props.userId ?
                         <div className='header__profile'>
                             <Link to="/profile" style={{ textDecoration: "none" }}>
+
                             <Avatar className='header__avatar' alt={this.props.currentUser} src="https://icon-library.com/images/avatar-icon-images/avatar-icon-images-4.jpg" />
+
                             </Link>
                             <Button type='submit' variant="outlined" color="primary" className='login_button' onClick={this.logOut}> LogOut </Button>
                         </div>

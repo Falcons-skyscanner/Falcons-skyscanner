@@ -71,3 +71,25 @@
     /* border-radius: 50px; */
     margin-bottom: 30px;
 }
+
+
+div.column {
+    margin:55px;
+    border: 1px solid #ccc;
+    float: left;
+    width:25%;
+}
+  
+  div.column:hover {
+    border: 1px solid #777;
+  }
+  
+  div.column img {
+    width: 100%;
+    height: auto;
+  }
+  
+  div.desc {
+    padding: 15px;
+    text-align: center;
+  }
