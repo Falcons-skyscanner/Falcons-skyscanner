@@ -7,7 +7,7 @@ const UserProfile = ({name,email ,userId}) => {
     return(
         <div className='user'>
             <UserDetails name={name} email={email} />
-            <UserFlights userId={userId}/>
+            <UserFlights userId={userId} name={name}/>
         </div>
     )
 }

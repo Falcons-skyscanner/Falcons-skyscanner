@@ -1,9 +1,26 @@
 import React from 'react'
 import Button from '@material-ui/core/Button';
+// import StripeButton from '../../SharedComponents/Stripe/StripeButton'
 
-const UserTicket = ({ ticket }) => {
+
+const UserTicket = ({ ticket,componentDidMount }) => {
     console.log(ticket)
-    // console.log(flightsData)
+    
+    const removeTicket = (obj) => {
+        // Simple POST request with a JSON body using fetch
+        const requestOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(obj)
+        };
+        fetch('http://localhost:5000/api/flights/removeTicket', requestOptions)
+            .then(response => response.json())
+            .then(data => {
+                componentDidMount()
+            })
+    }
+
+
     return (
         <div className='ticket'>
 
@@ -14,7 +31,7 @@ const UserTicket = ({ ticket }) => {
                     <h4 className="ticket__Carrier">{ticket.carrierOutboundLeg}</h4>
 
                     <div className="ticket__Outbound">
-                        <h4>{ ticket.originOutboundLeg }</h4>
+                        <h4>{ticket.originOutboundLeg}</h4>
                     </div>
 
 
@@ -44,7 +61,7 @@ const UserTicket = ({ ticket }) => {
 
             <div className='ticket__price'>
                 <h3>{`$${ticket.price}`}</h3>
-                <Button>Buy</Button>
+                <Button onClick={() => removeTicket({id:ticket._id})}> Remove From Cart </Button>
             </div>
 
         </div>
