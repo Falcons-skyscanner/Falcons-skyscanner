@@ -1,5 +1,6 @@
 import React from 'react'
 import SelectDialog from './SelectDialog'
+import MaxWidthDialog from '../../SharedComponents/Header/MaxWidthDialog'
 
 const TicketComponent = ({ flight, Carriers, Places, userId }) => {
     const getName = (id, arr) => {
@@ -12,25 +13,25 @@ const TicketComponent = ({ flight, Carriers, Places, userId }) => {
         return name
     }
 
-    const hashCode = function(string) {
+    const hashCode = function (string) {
         var hash = 0;
         if (string.length === 0) {
             return hash;
         }
         for (var i = 0; i < string.length; i++) {
             var char = string.charCodeAt(i);
-            hash = ((hash<<5)-hash)+char;
+            hash = ((hash << 5) - hash) + char;
             hash = hash & hash; // Convert to 32bit integer
         }
         return hash;
     }
 
-    const valueTohash = flight.MinPrice+getName(flight.OutboundLeg.CarrierIds[0], Carriers)+getName(flight.OutboundLeg.OriginId, Places)+getName(flight.OutboundLeg.DestinationId, Places)+userId
+    const valueTohash = flight.MinPrice + getName(flight.OutboundLeg.CarrierIds[0], Carriers) + getName(flight.OutboundLeg.OriginId, Places) + getName(flight.OutboundLeg.DestinationId, Places) + userId
 
 
     const userTicket = {
         userID: userId,
-        flightNo : hashCode(valueTohash), // there is no unique flight num from api so we hashed ours
+        flightNo: hashCode(valueTohash), // there is no unique flight num from api so we hashed ours
         price: flight.MinPrice,
         carrierOutboundLeg: getName(flight.OutboundLeg.CarrierIds[0], Carriers),
         originOutboundLeg: getName(flight.OutboundLeg.OriginId, Places),
@@ -39,13 +40,13 @@ const TicketComponent = ({ flight, Carriers, Places, userId }) => {
         originInboundLeg: getName(flight.InboundLeg.OriginId, Places),
         destinationInboundLeg: getName(flight.InboundLeg.DestinationId, Places),
         outboundDate: flight.OutboundLeg.DepartureDate.split('T')[0],
-        inboundDate:flight.InboundLeg.DepartureDate.split('T')[0]
+        inboundDate: flight.InboundLeg.DepartureDate.split('T')[0]
     }
 
     const addTicket = (obj) => {
         const requestOptions = {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json','auth-sky' : localStorage.getItem('auth-sky') },
+            headers: { 'Content-Type': 'application/json', 'auth-sky': localStorage.getItem('auth-sky') },
             body: JSON.stringify(obj)
         };
         fetch('http://localhost:5000/api/flights/addTicket', requestOptions)
@@ -83,7 +84,13 @@ const TicketComponent = ({ flight, Carriers, Places, userId }) => {
             </div>
             <div className='ticket__price'>
                 <h3>{`$${flight.MinPrice}`}</h3>
-                <SelectDialog addTicket={addTicket} userTicket={userTicket}>Select</SelectDialog>
+                {
+                    userId ?
+                        <SelectDialog addTicket={addTicket} userTicket={userTicket}>Select</SelectDialog>
+                        : <div>
+                            <MaxWidthDialog placeholder="Select"/>
+                        </div>
+                }
             </div>
         </div>
     )
