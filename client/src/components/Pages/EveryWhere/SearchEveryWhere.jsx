@@ -8,9 +8,7 @@ class SearchComponent extends React.Component {
     super(props)
     this.state = {
       originplace: "",
-      flightsData: [],
-      Carriers: [],
-      Places: []
+      flightsData: []
     }
   }
 
@@ -26,11 +24,7 @@ class SearchComponent extends React.Component {
       .then(response => response.json()
       )
       .then((data) => {
-        this.setState({
-          flightsData: data,
-          Carriers: data.Carriers,
-          Places: data.Places
-        })
+        this.setState({flightsData: data})
       })
       .catch(err => {
         console.error(err);
@@ -43,7 +37,7 @@ class SearchComponent extends React.Component {
 
 
   render() {
-    const { Carriers, Places,flightsData } = this.state
+    const {flightsData } = this.state
     return (
       <div className='searchpage'>
         <div className='searchEveryTicket'>
@@ -53,7 +47,7 @@ class SearchComponent extends React.Component {
         {
           flightsData.Quotes ?
             flightsData.Quotes.map((flight, id) => {
-              return <TicketComponent key={id} flight={flight} Carriers={Carriers} Places={Places} userId={this.props.userId} />
+              return <TicketComponent key={id} flight={flight} Carriers={flightsData.Carriers} Places={flightsData.Places} userId={this.props.userId} />
             }) : <div><h3>Look for flights to anywhere at anytime</h3></div>
         }
       </div>

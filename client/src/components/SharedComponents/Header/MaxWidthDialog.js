@@ -4,7 +4,7 @@ import SignIn from "./SignIn";
 
 
 
-export default function MaxWidthDialog() {
+export default function MaxWidthDialog({placeholder}) {
     const [open, setOpen] = React.useState(false);
     const handleClickOpen = () => {
         setOpen(true);
@@ -14,7 +14,7 @@ export default function MaxWidthDialog() {
     };
     return (
         <React.Fragment>
-            <Button variant="outlined" color="primary" className="login_button" onClick={handleClickOpen}> Log In </Button>
+            <Button variant="outlined" color="primary" className="login_button" onClick={handleClickOpen}> {placeholder} </Button>
             <Dialog
                 maxWidth={"xs"}
                 open={open}
