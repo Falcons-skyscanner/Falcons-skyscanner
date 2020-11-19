@@ -20,7 +20,7 @@ router.get('/getSuggestion', (req, res) => {
     Suggestion.find()
         .exec((err, suggested) => {
             if (err) return res.status(404).json({ success: false })
-            res.status(201).json({ success: true, suggested})
+            res.status(201).json({ success: true, suggested })
         })
 })
 
