@@ -90,7 +90,7 @@ const TicketComponent = ({ flight, Carriers, Places, userId }) => {
                 <h3>{`$${flight.MinPrice}`}</h3>
                 {
                     userId ?
-                        <SelectDialog success={success} addTicket={addTicket} userTicket={userTicket}>Select</SelectDialog>
+                        <SelectDialog setsuccess={setsuccess} success={success} addTicket={addTicket} userTicket={userTicket}>Select</SelectDialog>
                         : <div>
                             <MaxWidthDialog placeholder="Select"/>
                         </div>

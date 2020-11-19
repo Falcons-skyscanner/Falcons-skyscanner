@@ -4,14 +4,15 @@ import { Link } from 'react-router-dom'
 
 
 
-export default function SelectDialog({addTicket,userTicket,success}) {
+export default function SelectDialog({addTicket,userTicket,success,setsuccess}) {
     const [open, setOpen] = React.useState(false);
     const handleClickOpen = () => {
         setOpen(true);
         addTicket(userTicket)
     };
     const handleClose = () => {
-        setOpen(false);
+        setOpen(false)
+        setsuccess(false)
     };
     return (
         <React.Fragment>
