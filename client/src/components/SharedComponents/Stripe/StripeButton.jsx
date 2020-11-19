@@ -12,7 +12,7 @@ const StripeButton = ({ price, name, userId }) => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
                 token,
-                amount: price,
+                amount: priceForStripe,
                 cardUser: userId
             })
         }

@@ -5,17 +5,12 @@ const stripe = require('stripe')('sk_test_dz1CxU2WW8F7M8jPi3MTbyb100bjEBXtdD')
 
 
 router.post('/payment', (req, res) => {
-    console.log(req.body)
+    console.log(">>req>>",req.body)
     const body = {
         source: req.body.token.id,
         amount: req.body.amount,
         currency: 'usd'
     };
-
-
-    
-
-
 
     stripe.charges.create(body, (stripeErr, stripeRes) => {
         if (stripeErr) {
@@ -25,7 +20,7 @@ router.post('/payment', (req, res) => {
             console.log('success')
             res.status(201).json({ success: stripeRes });
             const card = new Card({
-                cardUser: req.body.userId,
+                cardUser: req.body.cardUser,
                 amount: req.body.amount,
                 currency: 'usd',
                 stripeToken: req.body.token.id,
