@@ -47,6 +47,9 @@ const ticketSchema = mongoose.Schema({
     price: {
         required: true,
         type: String
+    },
+    sold : {
+        type: Boolean
     }
 }, { timestamps: true })
 

@@ -24,20 +24,34 @@ const StripeButton = ({ price, name, userId }) => {
                 } else {
                     console.log(data)
                     alert('succesful payment')
-                    removeAllTickets({userId})
+                    updateAllTickets({userId})
                     window.location.reload()
                 }
             })
     }
 
-    const removeAllTickets = (obj) => {
+    // const removeAllTickets = (obj) => {
+    //     // Simple POST request with a JSON body using fetch
+    //     const requestOptions = {
+    //         method: 'POST',
+    //         headers: { 'Content-Type': 'application/json' },
+    //         body: JSON.stringify(obj)
+    //     };
+    //     fetch('http://localhost:5000/api/flights/removeAllTickets', requestOptions)
+    //         .then(response => response.json())
+    //         .then(data => {
+    //             console.log(data)
+    //         })
+    // }
+
+    const updateAllTickets = (obj) => {
         // Simple POST request with a JSON body using fetch
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(obj)
         };
-        fetch('http://localhost:5000/api/flights/removeAllTickets', requestOptions)
+        fetch('http://localhost:5000/api/flights/updateAllTickets', requestOptions)
             .then(response => response.json())
             .then(data => {
                 console.log(data)
