@@ -13,7 +13,7 @@ const EveryWhere = ({ suggest }) => {
             <img className='suggested__img' src={ suggest.imgUrl} alt="rome" />
             </Link>
             <div className='suggested__title'>
-                <h2> {suggest.name} </h2>
+                <h2> {suggest.name}  </h2>
             </div>
             
         </div>
