@@ -4,39 +4,21 @@ import { Link } from 'react-router-dom';
 import './Home.css'
 
 
-class EveryWhere extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
+const EveryWhere = ({ suggest }) => {
 
-        }
-    }
+    return (
 
-    render() {
-
-        return (
-            <div>
-                <Link to="/searcheverywhere" style={{ textDecoration: 'none' }}>
-                    <div class="column">
-                        <img src='https://cdn.travelpulse.com/images/e5a9edf4-a957-df11-b491-006073e71405/404747c6-03c2-4924-bc0a-e62e7603089f/630x355.jpg' alt="rome" width="300" height="200" />
-                        <div class="desc">Rome</div>
-                    </div>
-                </Link>
-                <Link to="/searcheverywhere" style={{ textDecoration: 'none' }}>
-                    <div class="column">
-                        <img src='https://pix10.agoda.net/geo/city/14932/1_14932_02.jpg?s=1920x822' alt="istanboul" width="300" height="200" />
-                        <div class="desc">Istanboul</div>
-                    </div>
-                </Link>
-                <Link to="/searcheverywhere" style={{ textDecoration: 'none' }}>
-                    <div class="column">
-                        <img src='https://tourflag.com/wp-content/uploads/%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%AD%D8%A9-%D9%81%D9%8A-%D9%83%D9%88%D8%A7%D9%84%D8%A7%D9%84%D9%85%D8%A8%D9%88%D8%B1.jpg' alt="kualampour" width="300" height="200" />
-                        <div class="desc">Kuala Lumpur</div>
-                    </div>
-                </Link>
+        <div className='container'>
+            <Link to='searcheverywhere' style={{textDecoration:"none"}}>
+            <img className='suggested__img' src={ suggest.imgUrl} alt="rome" />
+            </Link>
+            <div className='suggested__title'>
+                <h2> {suggest.name} </h2>
             </div>
-        )
-    }
+            
+        </div>
+    )
 }
+
 
 export default EveryWhere
