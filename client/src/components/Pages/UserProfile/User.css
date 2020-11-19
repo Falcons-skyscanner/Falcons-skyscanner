@@ -33,3 +33,14 @@
     object-fit: contain;
     margin-top: 25px;
 }
+
+.line{
+    width: 70%;
+    border-bottom: 1px solid grey;
+    margin-bottom: 20px;
+}
+
+.user__stripe{
+    width: 30px !important ;
+    margin-bottom: 30px;
+}

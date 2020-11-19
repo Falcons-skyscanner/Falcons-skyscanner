@@ -4,24 +4,25 @@ const mongoose = require('mongoose')
 //Scheema
 const creditSchema = mongoose.Schema({
 
-    userID: {
+    cardUser: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
     },
-    cardNo: {
-        required: true,
-        type: String,
-        unique: true
+    amount: {
+        type: Number
     },
-    cvv: {
-        required: true,
+    currency: {
         type: String
     },
-    expiryDate: {
-        required: true,
+    stripeToken: {
         type: String
-    }
-
+    },
+    billingDetails: {
+        type: Object
+    },
+    cardDetails: {
+        type: Object
+    },
 }, { timestamps: true })
 
 //Create the model according to Scheema
