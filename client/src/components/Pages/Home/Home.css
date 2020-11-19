@@ -1,5 +1,5 @@
 .carosel__img {
-    width: 93vw;
+    /* width: 93vw; */
     height: 450px;
 }
 
@@ -64,26 +64,34 @@
     margin-bottom: 30px;
 }
 
-div.column {
-    margin: 55px;
-    border: 0px solid #ccc;
-    float: left;
-    width: 25%;
-    min-width: 250px;
+.suggested{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
-div.column img:hover {
-    border-radius: 35px;
-    width: 98%;
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    /* width: 20%; */
+    
 }
 
-div.column img {
-    width: 100%;
-    height: auto;
-    border-radius: 30px;
+.suggested__img{
+    width: 25vw;
+    height: 220px;
+    margin-left: 60px;
+    border-radius: 40px;
 }
 
-div.desc {
-    padding: 10px;
-    text-align: center;
+.suggested__title{
+    margin-left: 40px;
 }
+
+
+
