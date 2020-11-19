@@ -5,6 +5,7 @@ import Header from './components/SharedComponents/Header/Header'
 import SearchPage from './components/Pages/Search/index'
 import UserProfile from './components/Pages/UserProfile/index'
 import SearchEveryWhere from './components/Pages/EveryWhere/SearchEveryWhere'
+import HistoryPage from './components/Pages/HistoryPage/HistoryPage'
 
 import { Switch, Route, Redirect } from 'react-router-dom';
 
@@ -48,10 +49,11 @@ class App extends React.Component {
         <Switch>
           <Route exact path='/' render={() => <HomePage getFlightsData={this.getFlightsData} />} />
           <Route exact path='/search' render={() => <SearchPage flightsData={flightsData} getFlightsData={this.getFlightsData} userId={userId} />} />
-          <Route path='/searcheverywhere' render={() => <SearchEveryWhere userId={userId}/> } />
+          <Route path='/searcheverywhere' render={() => <SearchEveryWhere userId={userId} />} />
           <Route path='/profile' render={() => userId ?
             <UserProfile name={this.state.currentUser} email={this.state.email} userId={userId} />
             : <Redirect to='/' />} />
+          <Route path='/History' render={() => userId ? <HistoryPage userId={userId} /> : <Redirect to='/'/>} />
         </Switch>
 
       </div>
