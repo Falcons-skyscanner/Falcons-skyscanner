@@ -24,7 +24,7 @@ export default function MaxWidthDialog({placeholder}) {
                 <DialogContent>
                     <div>
                         <div className="Dialog">
-                            <img className='Dialog__image' src='https://icon-library.com/images/avatar-icon-images/avatar-icon-images-4.jpg' alt='ss' />
+                            <img className='Dialog__image' src='https://media.istockphoto.com/vectors/sunset-with-bungalows-on-sea-resort-aircraft-in-the-sky-mountain-and-vector-id940018518?k=6&m=940018518&s=612x612&w=0&h=UIjqrOGVmE1g5Dt-k36kKAvWEzENoDQEEWz9cVXiTSA=' alt='ss' />
                         </div>
                         <div>
                             <SignIn />

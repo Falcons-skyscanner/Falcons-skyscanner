@@ -6,7 +6,6 @@ import './Home.css'
 const EveryWhere = ({ suggest }) => {
 
     return (
-
         <div className='container'>
             <Link to='searcheverywhere' style={{textDecoration:"none"}}>
             <img className='suggested__img' src={ suggest.imgUrl} alt="rome" />
@@ -14,7 +13,6 @@ const EveryWhere = ({ suggest }) => {
             <div className='suggested__title'>
                 <h2> {suggest.name}  </h2>
             </div>
-            
         </div>
     )
 }

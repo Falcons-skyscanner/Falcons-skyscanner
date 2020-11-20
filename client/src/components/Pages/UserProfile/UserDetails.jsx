@@ -12,6 +12,9 @@ const UserDetails = ({ name, email }) => {
                 <div className='user__info'>
                     <h4>{name}</h4>
                     <h4>{email}</h4>
+                    <Link to='/profile' style={{ textDecoration:'none' }}>
+                    <Button> Cart </Button>
+                    </Link>
                     <Link to='/history' style={{ textDecoration:'none' }}>
                     <Button> Paid Tickets </Button>
                     </Link>
