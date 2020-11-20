@@ -6,3 +6,13 @@
     align-items: flex-start;
     margin-top: 1rem;
 }
+
+@media only screen and (max-width: 768px) {
+    .histroy{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1rem;
+    }
+}

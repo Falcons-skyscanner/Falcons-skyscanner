@@ -46,8 +46,9 @@ class HomePage extends React.Component {
         const randomSuggested = this.random()
         console.log(randomSuggested)
         return (
-            <div>
+            <div style={{position:"relative"}}>
                 <SimpleSlider />
+                <SearchComponent getFlightsData={getFlightsData} />
                 <div className='suggested'>
                 {
                     this.state.suggestions.length !== 0 ?
@@ -56,7 +57,6 @@ class HomePage extends React.Component {
                     }) : <div style={{height:"23rem"}}></div>
                 }
                 </div>
-                <SearchComponent getFlightsData={getFlightsData} />
             </div>
         )
     }
