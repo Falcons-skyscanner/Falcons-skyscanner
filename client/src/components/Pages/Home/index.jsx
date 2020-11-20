@@ -29,12 +29,12 @@ class HomePage extends React.Component {
             })
     }
 
-    random = (array) => {
+    random = () => {
+        let arr=[].concat(this.state.suggestions)
         const result = []
         for (let i = 0; i < 3; i++) {
-            let index = Math.floor(Math.random() * array.length)
-            result.push(array[index])
-            array.splice(index, 1)
+            let index = Math.floor(Math.random() * arr.length)
+            result.push(arr.splice(index, 1)[0])
         }
         return result
     }
@@ -43,20 +43,20 @@ class HomePage extends React.Component {
 
     render() {
         const { getFlightsData } = this.props
-        const randomSuggested = this.random(this.state.suggestions)
+        const randomSuggested = this.random()
         console.log(randomSuggested)
         return (
             <div>
                 <SimpleSlider />
-                <SearchComponent getFlightsData={getFlightsData} />
                 <div className='suggested'>
                 {
                     this.state.suggestions.length !== 0 ?
                     randomSuggested.map(( suggest,i ) => {
                         return <EveryWhere suggest={suggest} key={i} />
-                    }) : <div></div>
+                    }) : <div style={{height:"23rem"}}></div>
                 }
                 </div>
+                <SearchComponent getFlightsData={getFlightsData} />
             </div>
         )
     }

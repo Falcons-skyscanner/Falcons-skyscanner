@@ -2,12 +2,16 @@
     padding: .6rem;
     display: flex;
     justify-content: space-between;
-    background-color: whitesmoke;
+    background-color: rgb(245, 245, 245, .90);
     align-items: center;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: 1;
 }
 
 .Header__logo{
-    width: 6rem;
+    width: 12rem;
     object-fit: contain;
 }
 

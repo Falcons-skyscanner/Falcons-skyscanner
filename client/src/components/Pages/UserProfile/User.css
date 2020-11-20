@@ -24,8 +24,9 @@
     margin-top: 2.5rem;
     width: 220px;
     min-height: 300px;
-    background-color: rgb(189, 226, 250);
+    background-color: rgba(78, 162, 201, 0.548);
     box-shadow: 0 10px 6px -6px #777;
+    border-radius: 20px 50px 20px 50px ;
 }
 
 .user__avatar{
