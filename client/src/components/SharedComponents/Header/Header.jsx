@@ -37,7 +37,7 @@ class Header extends React.Component {
                             <Button type='submit' variant="outlined" color="primary" className='login_button' onClick={this.logOut}> LogOut </Button>
                         </div>
                         :
-                        <MaxWidthDialog />
+                        <MaxWidthDialog placeholder="Login"/>
                 }
             </div>
         )
