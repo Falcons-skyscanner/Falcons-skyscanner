@@ -4,14 +4,15 @@ import { Link } from 'react-router-dom'
 
 
 
-export default function SelectDialog({addTicket,userTicket}) {
+export default function SelectDialog({addTicket,userTicket,success,setsuccess}) {
     const [open, setOpen] = React.useState(false);
     const handleClickOpen = () => {
         setOpen(true);
         addTicket(userTicket)
     };
     const handleClose = () => {
-        setOpen(false);
+        setOpen(false)
+        setsuccess(false)
     };
     return (
         <React.Fragment>
@@ -28,9 +29,9 @@ export default function SelectDialog({addTicket,userTicket}) {
                             <img className='Dialog__image' src='https://ownacademy.co/wp-content/uploads/2018/10/Tick_Mark_Dark-512.png' alt='ss' />
                         </div>
                         <div className="AddDialog">
-                            <h3>Added successfully</h3>
+                            <h3>{ success ? 'Added successfully' : 'Already added'} </h3>
                             <Link to="/profile" style={{ textDecoration: "none" }}>
-                                <Button  onClick={handleClose} color="primary"> go to checkout </Button>
+                                <Button  onClick={handleClose} color="primary">go to checkout </Button>
                             </Link>
                             <DialogActions>
                                 <Button  onClick={handleClose} color="primary"> Close </Button>

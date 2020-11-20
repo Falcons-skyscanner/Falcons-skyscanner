@@ -14,7 +14,7 @@ router.post('/addTicket', auth, (req, res) => {
 })
 
 router.post('/userTickets', auth, (req, res) => {
-    Ticket.find({ 'userID': req.body.userId }).sort({ '_id': -1 })
+    Ticket.find({ 'userID': req.body.userId,'sold': false } ).sort({ '_id': -1 })
         .populate('userID')
         .exec((err, tickets) => {
             if (err) return res.status(404).json({ success: false })
@@ -36,5 +36,23 @@ router.post('/removeAllTickets', (req, res) => {
         .then((status) => res.status(200).json({ success: true }))
         .catch((err) => res.status(404).json({ success: false, err }))
 })
+
+router.post('/updateAllTickets', (req, res) => {
+    console.log(req.body)
+    Ticket.updateMany({ 'userID': req.body.userId } ,{ 'sold': true })
+        .then((status) => res.status(200).json({ success: true }))
+        .catch((err) => res.status(404).json({ success: false, err }))
+})
+
+router.post('/soldTickets', auth, (req, res) => {
+    Ticket.find({ 'userID': req.body.userId, 'sold': true }).sort({ '_id': -1 })
+        .populate('userID')
+        .exec((err, tickets) => {
+            if (err) return res.status(404).json({ success: false })
+            res.status(201).json({ success: true, tickets })
+        })
+})
+
+
 
 module.exports = router

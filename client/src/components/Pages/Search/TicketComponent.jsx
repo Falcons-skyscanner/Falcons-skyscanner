@@ -3,6 +3,7 @@ import SelectDialog from './SelectDialog'
 import MaxWidthDialog from '../../SharedComponents/Header/MaxWidthDialog'
 
 const TicketComponent = ({ flight, Carriers, Places, userId }) => {
+    const [success, setsuccess] = React.useState(true);
     const getName = (id, arr) => {
         let name = ''
         arr.forEach((el, i) => {
@@ -40,7 +41,8 @@ const TicketComponent = ({ flight, Carriers, Places, userId }) => {
         originInboundLeg: getName(flight.InboundLeg.OriginId, Places),
         destinationInboundLeg: getName(flight.InboundLeg.DestinationId, Places),
         outboundDate: flight.OutboundLeg.DepartureDate.split('T')[0],
-        inboundDate: flight.InboundLeg.DepartureDate.split('T')[0]
+        inboundDate: flight.InboundLeg.DepartureDate.split('T')[0],
+        sold : false
     }
 
     const addTicket = (obj) => {
@@ -52,7 +54,9 @@ const TicketComponent = ({ flight, Carriers, Places, userId }) => {
         fetch('http://localhost:5000/api/flights/addTicket', requestOptions)
             .then(response => response.json())
             .then(data => {
-                console.log(data)
+                if(!data.success){
+                    setsuccess(false)
+                }else setsuccess(true)
             })
     }
 
@@ -86,7 +90,7 @@ const TicketComponent = ({ flight, Carriers, Places, userId }) => {
                 <h3>{`$${flight.MinPrice}`}</h3>
                 {
                     userId ?
-                        <SelectDialog addTicket={addTicket} userTicket={userTicket}>Select</SelectDialog>
+                        <SelectDialog setsuccess={setsuccess} success={success} addTicket={addTicket} userTicket={userTicket}>Select</SelectDialog>
                         : <div>
                             <MaxWidthDialog placeholder="Select"/>
                         </div>

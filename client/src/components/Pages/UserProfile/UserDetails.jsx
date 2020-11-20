@@ -1,4 +1,6 @@
 import React from 'react'
+import { Button } from '@material-ui/core'
+import { Link } from 'react-router-dom'
 
 const UserDetails = ({ name, email }) => {
     return (
@@ -10,6 +12,9 @@ const UserDetails = ({ name, email }) => {
                 <div className='user__info'>
                     <h4>{name}</h4>
                     <h4>{email}</h4>
+                    <Link to='/history' style={{ textDecoration:'none' }}>
+                    <Button> Paid Tickets </Button>
+                    </Link>
                 </div>
             </div>
         </div>
