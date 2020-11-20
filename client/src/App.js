@@ -53,9 +53,8 @@ class App extends React.Component {
           <Route path='/profile' render={() => userId ?
             <UserProfile name={this.state.currentUser} email={this.state.email} userId={userId} />
             : <Redirect to='/' />} />
-          <Route path='/History' render={() => userId ? <HistoryPage userId={userId} /> : <Redirect to='/'/>} />
+          <Route path='/History' render={() => userId ? <HistoryPage userId={userId} name={this.state.currentUser} email={this.state.email}/> : <Redirect to='/'/>} />
         </Switch>
-
       </div>
     )
   }

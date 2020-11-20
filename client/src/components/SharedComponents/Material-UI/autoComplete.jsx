@@ -25,10 +25,10 @@ class Asynchronous extends React.Component {
         if (value) {
             await this.setState({ placeId: value.PlaceId })
             console.log(this.state.placeId)
-            if (this.props.fieldName === "From") {
-                this.props.setOrigin(this.state.placeId)
-            } else if (this.props.fieldName === "To") {
+            if (this.props.fieldName === "To") {
                 this.props.setDest(this.state.placeId)
+            }else{
+                this.props.setOrigin(this.state.placeId)
             }
         }
     }
