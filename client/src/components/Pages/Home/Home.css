@@ -1,12 +1,12 @@
 .carosel__img {
     /* width: 93vw; */
-    height: 450px;
+    height: 480px;
 }
 
 .img_container {
     width: 93vw;
-    height: 450px;
-    background-image: url('https://cdn.ikointl.com/sites/default/files/4_1_0_0.jpg');
+    height: 480px;
+    background-image: url('https://www.lols.be/wp-content/uploads/2020/01/8-manieren-om-goedkope-vluchten-te-krijgen-tijdens-de-vakantie-scaled.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -14,7 +14,7 @@
 
 .img_container1 {
     width: 93vw;
-    height: 450px;
+    height: 480px;
     background-image: url('https://www.haveatravel.com/wp-content/uploads/2019/12/a8374ed83bdb55612927348d5cf6a4581.jpg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -23,7 +23,7 @@
 
 .img_container2 {
     width: 93vw;
-    height: 450px;
+    height: 480px;
     background-image: url('https://i2.wp.com/www.smartertravel.com/uploads/2019/02/woman-traveling-norway-sightseeing.jpg?resize=1400%2C500&ssl=1');
     background-repeat: no-repeat;
     background-size: cover;
@@ -32,7 +32,7 @@
 
 .img_container3 {
     width: 93vw;
-    height: 450px;
+    height: 480px;
     background-image: url('https://www.go-today.com/stw/images/hero-images/country-hero-images/Italy.jpg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -45,53 +45,71 @@
     align-items: center;
     padding: 30px;
     background-color: whitesmoke;
-    position: relative;
-    top: -300px;
+    position: absolute;
+    top: 200px;
     width: 75%;
     margin-left: 11%;
     opacity: 0.9;
     border-radius: 70px;
 }
+
 .searchEveryTicket {
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding: 30px;
-    background-color:white ;
+    background-color: white;
     /* position: absolute; */
     width: 50%;
     border-radius: 80px;
     margin-bottom: 30px;
 }
 
-.suggested{
+.suggested {
     display: flex;
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
 }
 
-
-.container{
+.container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+    padding-top: 3rem;
     /* width: 20%; */
-    
 }
 
-.suggested__img{
-    width: 25vw;
+.suggested__img {
+    width: 310px;
     height: 220px;
-    margin-left: 60px;
+    margin: 0px 30px;
     border-radius: 40px;
 }
 
-.suggested__title{
-    margin-left: 40px;
+
+@media only screen and (max-width: 768px) {
+    .searchBox {
+        flex-direction: column;
+        top: 30px;
+        margin-left: 7%;
+    }
+    .search__button {
+        margin-top: 10px !important;
+    }
+    .searchBoxTicket {
+        flex-direction: column;
+        margin-left: 7%
+    }
+    .searchEveryTicket {
+        flex-direction: column;
+        margin-left: 7%;
+        padding: 10px;
+        width: 75%;
+        margin-bottom: 10px;
+    }
+    .suggested__img {
+        margin-left: 10px;
+    }
 }
-
-
-

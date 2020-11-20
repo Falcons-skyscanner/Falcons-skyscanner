@@ -64,7 +64,7 @@ class SearchComponent extends React.Component {
                     <DatePicker bound="Return" setInDate={this.setInDate} />
                     <OpenSelect />
                     <Link to="/search" style={{textDecoration:"none"}}>
-                        <Button onClick={() => this.postReq(this.state)} style={{ marginLeft: "8px" }} color="secondary" variant="contained" size="large">search</Button>
+                        <Button onClick={() => this.postReq(this.state)} style={{ marginLeft: "8px" }} color="primary" variant="contained" size="large">search</Button>
                     </Link>
                 </div>
             </div>
