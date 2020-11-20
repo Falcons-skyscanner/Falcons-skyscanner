@@ -41,7 +41,7 @@ class SearchComponent extends React.Component {
     return (
       <div className='searchpage'>
         <div className='searchEveryTicket'>
-          <Asynchronous fieldName="From" setOrigin={this.setOrigin} />
+          <Asynchronous fieldName="Where are you" setOrigin={this.setOrigin} />
           <Button onClick={() => this.postReq(this.state)} style={{ marginLeft: "8px", marginTop:"10px" }} color="primary" variant="contained" size="large">search everywhere anytime</Button>
         </div>
         {
