@@ -50,7 +50,7 @@ class SignUp extends React.Component {
         const { name, email, password } = this.state
         return (
 
-            <div className='login'>
+            <form className='login'>
                 <TextField className='Input'
                     label='Username'
                     type='text'
@@ -76,7 +76,7 @@ class SignUp extends React.Component {
                 />
 
                 <Button type='submit' className='dialog_button' onClick={this.signUp} > Sign Up </Button>
-            </div>
+            </form>
 
         )
     }

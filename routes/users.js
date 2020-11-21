@@ -19,6 +19,7 @@ router.get('/auth' , auth , (req,res) => {
 router.post('/signup', async (req, res) => {
     console.log(req.body)
     try {
+        if(req.body.password === '' ) throw Error
         const hashedPw = await bcrypt.hash(req.body.password, 10) // hasing the pw
         console.log(hashedPw)
         let user = new User({

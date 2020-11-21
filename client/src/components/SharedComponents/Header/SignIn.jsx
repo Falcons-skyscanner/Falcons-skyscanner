@@ -42,7 +42,8 @@ class SignIn extends React.Component {
         console.log(value)
     }
 
-    signUpStatus = () => {
+    signUpStatus = (e) => {
+        e.preventDefault()
         this.setState({ signedUp: !this.state.signedUp })
     }
 
@@ -53,7 +54,7 @@ class SignIn extends React.Component {
             <div>
                 {
                     signedUp ?
-                        <div className='login'>
+                        <form className='login'>
                             <TextField  className='Input'
                                 label="Email"
                                 type='email'
@@ -71,7 +72,7 @@ class SignIn extends React.Component {
                             />
                             <Button type='submit' className='dialog_button' onClick={this.signIn} > Log In </Button>
                             <Button type='submit' className='dialog_button' onClick={this.signUpStatus} > Sign Up </Button>
-                        </div> :
+                        </form> :
                         <SignUp signUpStatus={this.signUpStatus} />
                 }
 
