@@ -30,7 +30,8 @@ class SignIn extends React.Component {
             })
     }
 
-    signIn = () => {
+    signIn = (e) => {
+        // e.preventDefault()
         this.postMethod(this.state)
         // window.location.reload(false)
     }
@@ -42,7 +43,8 @@ class SignIn extends React.Component {
         console.log(value)
     }
 
-    signUpStatus = () => {
+    signUpStatus = (e) => {
+        e.preventDefault()
         this.setState({ signedUp: !this.state.signedUp })
     }
 
@@ -53,13 +55,14 @@ class SignIn extends React.Component {
             <div>
                 {
                     signedUp ?
-                        <div className='login'>
+                        <form className='login'>
                             <TextField  className='Input'
                                 label="Email"
                                 type='email'
                                 name='email'
                                 value={email}
                                 onChange={this.handleChange}
+                                required
                             />
                             <br />
                             <TextField  className='Input'
@@ -68,10 +71,11 @@ class SignIn extends React.Component {
                                 name='password'
                                 value={password}
                                 onChange={this.handleChange}
+                                required
                             />
                             <Button type='submit' className='dialog_button' onClick={this.signIn} > Log In </Button>
                             <Button type='submit' className='dialog_button' onClick={this.signUpStatus} > Sign Up </Button>
-                        </div> :
+                        </form> :
                         <SignUp signUpStatus={this.signUpStatus} />
                 }
 
