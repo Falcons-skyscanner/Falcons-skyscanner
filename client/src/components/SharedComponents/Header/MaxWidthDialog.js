@@ -4,7 +4,7 @@ import SignIn from "./SignIn";
 
 
 
-export default function MaxWidthDialog({placeholder}) {
+export default function MaxWidthDialog({placeholder,setUser}) {
     const [open, setOpen] = React.useState(false);
     const handleClickOpen = () => {
         setOpen(true);
@@ -27,7 +27,7 @@ export default function MaxWidthDialog({placeholder}) {
                             <img className='Dialog__image' src='https://media.istockphoto.com/vectors/sunset-with-bungalows-on-sea-resort-aircraft-in-the-sky-mountain-and-vector-id940018518?k=6&m=940018518&s=612x612&w=0&h=UIjqrOGVmE1g5Dt-k36kKAvWEzENoDQEEWz9cVXiTSA=' alt='ss' />
                         </div>
                         <div>
-                            <SignIn />
+                            <SignIn setUser={setUser} />
                         </div>
                     </div>
                 </DialogContent>
