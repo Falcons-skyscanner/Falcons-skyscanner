@@ -55,7 +55,7 @@ class SignIn extends React.Component {
             <div>
                 {
                     signedUp ?
-                        <form className='login'>
+                        <div className='login'>
                             <TextField  className='Input'
                                 label="Email"
                                 type='email'
@@ -75,7 +75,7 @@ class SignIn extends React.Component {
                             />
                             <Button type='submit' className='dialog_button' onClick={this.signIn} > Log In </Button>
                             <Button type='submit' className='dialog_button' onClick={this.signUpStatus} > Sign Up </Button>
-                        </form> :
+                        </div> :
                         <SignUp signUpStatus={this.signUpStatus} />
                 }
 
