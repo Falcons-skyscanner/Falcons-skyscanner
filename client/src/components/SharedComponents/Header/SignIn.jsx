@@ -28,6 +28,7 @@ class SignIn extends React.Component {
                     localStorage.setItem('userId', data.userId)
                     // window.location.reload()
                     this.props.setUser(data.userId)
+                    window.location.reload()
                 }
             })
     }
