@@ -38,7 +38,7 @@ class SignUp extends React.Component {
             })
     }
 
-    signUp = () => {
+    signUp = (e) => {
         this.postReq(this.state)
     }
 

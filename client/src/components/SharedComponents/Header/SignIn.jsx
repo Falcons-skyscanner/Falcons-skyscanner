@@ -30,7 +30,7 @@ class SignIn extends React.Component {
             })
     }
 
-    signIn = () => {
+    signIn = (e) => {
         this.postMethod(this.state)
         // window.location.reload(false)
     }
