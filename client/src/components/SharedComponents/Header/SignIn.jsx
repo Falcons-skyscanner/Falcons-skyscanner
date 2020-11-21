@@ -1,10 +1,10 @@
 import React from 'react'
 import SignUp from './SignUp'
-import { Button,TextField  } from '@material-ui/core'
+import { Button, TextField } from '@material-ui/core'
 
 class SignIn extends React.Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
             email: '',
             password: '',
@@ -18,19 +18,21 @@ class SignIn extends React.Component {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(obj)
         };
-        fetch('http://localhost:5000/api/users/login', requestOptions)
+        fetch('/api/users/login', requestOptions)
             .then(response => response.json())
-            .then(data =>{
+            .then(data => {
                 console.log(data)
-                if(data.success){
-                    localStorage.setItem('auth-sky', data.token )
+                if (data.success) {
+                    localStorage.setItem('auth-sky', data.token)
                     localStorage.setItem('userId', data.userId)
+                    this.props.setUser(data.userId)
                     window.location.reload()
                 }
             })
     }
 
-    signIn = () => {
+    signIn = (e) => {
+        e.preventDefault()
         this.postMethod(this.state)
         // window.location.reload(false)
     }
@@ -42,37 +44,42 @@ class SignIn extends React.Component {
         console.log(value)
     }
 
-    signUpStatus = () => {
+    signUpStatus = (e) => {
+        e.preventDefault()
         this.setState({ signedUp: !this.state.signedUp })
     }
 
 
     render() {
-        const { email, password,signedUp } = this.state
+        const { email, password, signedUp } = this.state
         return (
             <div>
                 {
                     signedUp ?
-                        <div className='login'>
-                            <TextField  className='Input'
-                                label="Email"
-                                type='email'
-                                name='email'
-                                value={email}
-                                onChange={this.handleChange}
-                            />
-                            <br />
-                            <TextField  className='Input'
-                                label="Password"
-                                type='password'
-                                name='password'
-                                value={password}
-                                onChange={this.handleChange}
-                            />
-                            <Button type='submit' className='dialog_button' onClick={this.signIn} > Log In </Button>
+                        <div style={{ display: 'flex', flexDirection: 'column' }} >
+                            <form className='login' onSubmit={this.signIn}>
+                                <TextField className='Input'
+                                    label="Email"
+                                    type='email'
+                                    name='email'
+                                    value={email}
+                                    onChange={this.handleChange}
+                                    required
+                                />
+                                <br />
+                                <TextField className='Input'
+                                    label="Password"
+                                    type='password'
+                                    name='password'
+                                    value={password}
+                                    onChange={this.handleChange}
+                                    required
+                                />
+                                <Button type='submit' className='dialog_button'  > Log In </Button>
+                            </form>
                             <Button type='submit' className='dialog_button' onClick={this.signUpStatus} > Sign Up </Button>
-                        </div> :
-                        <SignUp signUpStatus={this.signUpStatus} />
+                        </div > :
+                        <SignUp signUpStatus={this.signUpStatus} setUser={this.props.setUser} />
                 }
 
             </div>

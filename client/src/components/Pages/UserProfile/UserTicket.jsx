@@ -13,7 +13,7 @@ const UserTicket = ({ ticket,componentDidMount }) => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(obj)
         };
-        fetch('http://localhost:5000/api/flights/removeTicket', requestOptions)
+        fetch('/api/flights/removeTicket', requestOptions)
             .then(response => response.json())
             .then(data => {
                 componentDidMount()
@@ -61,7 +61,7 @@ const UserTicket = ({ ticket,componentDidMount }) => {
 
             <div className='ticket__price'>
                 <h3>{`$${ticket.price}`}</h3>
-                <Button onClick={() => removeTicket({id:ticket._id})}> Remove From Cart </Button>
+                <Button onClick={() => removeTicket({id:ticket._id})}> Delete </Button>
             </div>
 
         </div>

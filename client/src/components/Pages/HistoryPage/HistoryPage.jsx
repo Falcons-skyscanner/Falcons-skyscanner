@@ -25,7 +25,7 @@ class HistoryPage extends React.Component {
             body: JSON.stringify(obj)
 
         };
-        fetch('http://localhost:5000/api/flights/soldTickets', requestOptions)
+        fetch('/api/flights/soldTickets', requestOptions)
             .then(response => response.json())
             .then(data => {
                 console.log(data.tickets)

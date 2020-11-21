@@ -1,6 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
+const path = require('path')
 
 // express initializations
 const app = express()
@@ -12,7 +13,7 @@ app.use(express.json())
 app.use(cors())
 
 // Connecting with MongoDB
-const connect = mongoose.connect('mongodb+srv://m0moooZ:momoftw1!@react-blog.pf36a.mongodb.net/skyscan?retryWrites=true&w=majority',
+const connect = mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://m0moooZ:momoftw1!@react-blog.pf36a.mongodb.net/skyscan?retryWrites=true&w=majority',
     {
         useNewUrlParser: true, useUnifiedTopology: true,
         useCreateIndex: true, useFindAndModify: false
@@ -31,7 +32,13 @@ app.use('/api/flights', require('./routes/flights'));
 app.use('/api/card', require('./routes/card'));
 app.use('/api/suggestion', require('./routes/suggestion'));
 
+if(process.env.NODE_ENV === 'production'){
+    app.use(express.static('client/build'))
 
+    app.get("*", (req, res) => {
+        res.sendFile(path.join(__dirname, "client", "build", "index.html"))
+      })
+}
 
 app.use((req,res) => {
     res.send('not found')

@@ -29,7 +29,7 @@ class App extends React.Component {
       }
 
     };
-    fetch('http://localhost:5000/api/users/auth', requestOptions)
+    fetch('/api/users/auth', requestOptions)
       .then(response => response.json())
       .then(data => {
         console.log(data)
@@ -41,11 +41,15 @@ class App extends React.Component {
     this.setState({ flightsData: data })
   }
 
+  setUser = (data) => {
+    this.setState({ userId: data })
+  } 
+
   render() {
     const { currentUser, flightsData, userId } = this.state
     return (
       <div className="App">
-        <Header currentUser={currentUser} userId={userId} />
+        <Header currentUser={currentUser} userId={userId} setUser={this.setUser} />
         <Switch>
           <Route exact path='/' render={() => <HomePage getFlightsData={this.getFlightsData} />} />
           <Route exact path='/search' render={() => <SearchPage flightsData={flightsData} getFlightsData={this.getFlightsData} userId={userId} />} />

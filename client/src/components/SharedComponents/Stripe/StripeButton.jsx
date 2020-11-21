@@ -16,7 +16,7 @@ const StripeButton = ({ price, name, userId }) => {
                 cardUser: userId
             })
         }
-        fetch('http://localhost:5000/api/card/payment', requestOptions)
+        fetch('/api/card/payment', requestOptions)
             .then(response => response.json())
             .then(data => {
                 if (!data.success) {
@@ -51,7 +51,7 @@ const StripeButton = ({ price, name, userId }) => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(obj)
         };
-        fetch('http://localhost:5000/api/flights/updateAllTickets', requestOptions)
+        fetch('/api/flights/updateAllTickets', requestOptions)
             .then(response => response.json())
             .then(data => {
                 console.log(data)

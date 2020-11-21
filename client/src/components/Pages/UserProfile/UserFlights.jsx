@@ -26,7 +26,7 @@ class UserFlights extends React.Component {
             body: JSON.stringify(obj)
 
         };
-        fetch('http://localhost:5000/api/flights/userTickets', requestOptions)
+        fetch('/api/flights/userTickets', requestOptions)
             .then(response => response.json())
             .then(data => {
                 console.log(data.tickets)
@@ -35,20 +35,20 @@ class UserFlights extends React.Component {
     }
 
     totalAcc = (usertickets) => {
-        console.log(usertickets.reduce(( acc,userticket ) => acc + Number(userticket.price), 0))
-        return usertickets.reduce(( acc,userticket ) => acc + Number(userticket.price), 0)
+        console.log(usertickets.reduce((acc, userticket) => acc + Number(userticket.price), 0))
+        return usertickets.reduce((acc, userticket) => acc + Number(userticket.price), 0)
     }
 
-    
+
 
     render() {
-        
+
         return (
 
             <div className='user__flights'>
                 <h1 className='user__tab'>Cart</h1>
                 {
-                    this.state.userTickets.length!==0 ?
+                    this.state.userTickets.length !== 0 ?
                         this.state.userTickets.map((ticket, id) => {
                             return <UserTicket ticket={ticket} key={id} componentDidMount={this.componentDidMount} />
 
@@ -56,9 +56,11 @@ class UserFlights extends React.Component {
                         : <div className='user__tab'><h3>No Tickets</h3></div>
                 }
                 <div className='line'></div>
-                <div className='user__stripe'>
-                    <StripeButton name={this.props.name} userId={this.props.userId} price={this.totalAcc(this.state.userTickets)} />
-                </div>
+                {
+                    this.state.userTickets ? <div className='user__stripe'>
+                        <StripeButton name={this.props.name} userId={this.props.userId} price={this.totalAcc(this.state.userTickets)} />
+                    </div> : <div></div>
+                }
 
             </div>
         )
