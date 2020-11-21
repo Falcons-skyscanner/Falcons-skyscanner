@@ -33,12 +33,13 @@ class SignUp extends React.Component {
                 if (data.success) {
                     localStorage.setItem('auth-sky', data.token)
                     localStorage.setItem('userId', data.userId)
-                    window.location.reload()
+                    this.props.setUser(data.userId)
                 }
             })
     }
 
     signUp = (e) => {
+        e.preventDefault()
         this.postReq(this.state)
     }
 
@@ -50,13 +51,14 @@ class SignUp extends React.Component {
         const { name, email, password } = this.state
         return (
 
-            <div className='login'>
+            <form className='login' onSubmit={this.signUp}>
                 <TextField className='Input'
                     label='Username'
                     type='text'
                     name='name'
                     value={name}
                     onChange={this.handleChange}
+                    required
                 />
                 <br />
                 <TextField className='Input'
@@ -65,6 +67,7 @@ class SignUp extends React.Component {
                     name='email'
                     value={email}
                     onChange={this.handleChange}
+                    required
                 />
                 <br />
                 <TextField className='Input'
@@ -73,10 +76,11 @@ class SignUp extends React.Component {
                     name='password'
                     value={password}
                     onChange={this.handleChange}
+                    required
                 />
 
-                <Button type='submit' className='dialog_button' onClick={this.signUp} > Sign Up </Button>
-            </div>
+                <Button type='submit' className='dialog_button'  > Sign Up </Button>
+            </form>
 
         )
     }
