@@ -61,7 +61,7 @@ const UserTicket = ({ ticket,componentDidMount }) => {
 
             <div className='ticket__price'>
                 <h3>{`$${ticket.price}`}</h3>
-                <Button onClick={() => removeTicket({id:ticket._id})}> Remove From Cart </Button>
+                <Button onClick={() => removeTicket({id:ticket._id})}> Delete </Button>
             </div>
 
         </div>
