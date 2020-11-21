@@ -51,7 +51,7 @@ const TicketComponent = ({ flight, Carriers, Places, userId }) => {
             headers: { 'Content-Type': 'application/json', 'auth-sky': localStorage.getItem('auth-sky') },
             body: JSON.stringify(obj)
         };
-        fetch('http://localhost:5000/api/flights/addTicket', requestOptions)
+        fetch('/api/flights/addTicket', requestOptions)
             .then(response => response.json())
             .then(data => {
                 if(!data.success){

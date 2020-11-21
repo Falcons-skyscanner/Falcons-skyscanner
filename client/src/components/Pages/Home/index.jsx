@@ -21,7 +21,7 @@ class HomePage extends React.Component {
             }
 
         };
-        fetch('http://localhost:5000/api/suggestion/getSuggestion', requestOptions)
+        fetch('/api/suggestion/getSuggestion', requestOptions)
             .then(response => response.json())
             .then(data => {
                 console.log(data)

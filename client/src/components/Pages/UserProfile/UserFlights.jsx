@@ -26,7 +26,7 @@ class UserFlights extends React.Component {
             body: JSON.stringify(obj)
 
         };
-        fetch('http://localhost:5000/api/flights/userTickets', requestOptions)
+        fetch('/api/flights/userTickets', requestOptions)
             .then(response => response.json())
             .then(data => {
                 console.log(data.tickets)

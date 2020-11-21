@@ -13,7 +13,7 @@ const UserTicket = ({ ticket,componentDidMount }) => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(obj)
         };
-        fetch('http://localhost:5000/api/flights/removeTicket', requestOptions)
+        fetch('/api/flights/removeTicket', requestOptions)
             .then(response => response.json())
             .then(data => {
                 componentDidMount()

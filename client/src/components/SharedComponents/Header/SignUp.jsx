@@ -26,7 +26,7 @@ class SignUp extends React.Component {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(obj)
         };
-        fetch('http://localhost:5000/api/users/signup', requestOptions)
+        fetch('/api/users/signup', requestOptions)
             .then(response => response.json())
             .then(data => {
                 console.log(data)

@@ -29,7 +29,7 @@ class App extends React.Component {
       }
 
     };
-    fetch('http://localhost:5000/api/users/auth', requestOptions)
+    fetch('/api/users/auth', requestOptions)
       .then(response => response.json())
       .then(data => {
         console.log(data)
