@@ -1,7 +1,7 @@
 # Falcons - Sky Scanner
 [Falcons](https://falcons-scanner.herokuapp.com/)
 [GitHub Link](https://github.com/Falcons-skyscanner/Falcons-skyscanner)
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
+
 
 Falcons - Sky Scanner: A web app. For [HackReactor](https://www.hackreactor.com/) - projects phase, allow the users to search about their travel flights, from anywhere to anywhere.
 
