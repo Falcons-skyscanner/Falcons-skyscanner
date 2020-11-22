@@ -21,6 +21,7 @@ class Header extends React.Component {
 
 
     render() {
+        
         return (
             <div className='Header'>
                 <Link to="/" style={{ textDecoration: "none" }}>
@@ -35,7 +36,7 @@ class Header extends React.Component {
                             <Button type='submit' variant="outlined" color="primary" className='login_button' onClick={this.logOut}> LogOut </Button>
                         </div>
                         :
-                        <MaxWidthDialog placeholder="Login"/>
+                        <MaxWidthDialog setUser={this.props.setUser} placeholder="Login"/>
                 }
             </div>
         )

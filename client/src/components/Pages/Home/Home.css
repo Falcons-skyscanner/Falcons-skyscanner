@@ -70,6 +70,7 @@
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
+    margin-top: 90px;
 }
 
 .container {
@@ -92,7 +93,7 @@
 @media only screen and (max-width: 768px) {
     .searchBox {
         flex-direction: column;
-        top: 30px;
+        top: 40px;
         margin-left: 7%;
     }
     .search__button {
