@@ -29,6 +29,13 @@ const connect = mongoose.connect('mongodb+srv://m0moooZ:momoftw1!@react-blog.pf3
 app.use('/api/users', require('./routes/users'));
 app.use('/api/flights', require('./routes/flights'));
 app.use('/api/card', require('./routes/card'));
+app.use('/api/suggestion', require('./routes/suggestion'));
+
+
+
+app.use((req,res) => {
+    res.send('not found')
+})
 
 
 const port = process.env.PORT || 5000

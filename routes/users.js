@@ -9,6 +9,7 @@ const auth = require('../middlewares/auth')
 
 router.get('/auth' , auth , (req,res) => {
     res.json({
+        id : req.user._id,
         name : req.user.name,
         email: req.user.email,
         success: true
@@ -30,7 +31,8 @@ router.post('/signup', async (req, res) => {
         console.log(token)
         res.header('auth-sky', token).status(201).json({
             success: true,
-            token
+            token,
+            userId : user._id
         }) // send token as a res and header
 
     } catch {
@@ -50,7 +52,8 @@ router.post('/login', async (req, res) => {
             const token = await jwt.sign({ _id: user._id }, 'secret') // generate token in password match
             res.header('auth-sky', token).status(201).json({ // sending token as a res and header
                 success: true,
-                token
+                token,
+                userId : user._id
             })
         }
     } catch {
